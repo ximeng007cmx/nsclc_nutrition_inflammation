@@ -1,0 +1,134 @@
+{
+  "title": "Analysis code for: Nutrition\u2013inflammation gene-expression axes associate with myeloid inflammatory activity but do not predict survival in non-small cell lung cancer: a TCGA transcriptomic analysis",
+  "description": "<p>Analysis pipeline for a TCGA pan-cancer RNA-seq study of three a-priori nutrition\u2013inflammation gene-expression axes in non-small cell lung cancer. The three signatures (16 genes each) are prior definitions built as proxies for the components of the advanced lung cancer inflammation index; the study explicitly does <i>not</i> claim equivalence with the clinical index.</p><p><b>Pipeline.</b> Stream subsetting of the UCSC Xena Toil pan-cancer RSEM FPKM compendium to TCGA-LUAD/TCGA-LUSC; reversal of the stored log2(FPKM + 0.001) encoding and Ensembl-to-symbol collapse; ssGSEA single-sample scoring (GSVA 2.x) of the three axes; LASSO-Cox modelling in the LUAD training cohort (glmnet, 10-fold cross-validation); internal hold-out validation with a repeated 7:3 split (100 repetitions) and feature selection performed inside the training set only; cross-histology generalisation to TCGA-LUSC; and three pre-specified sensitivity analyses covering the survival endpoint (OS / DSS / PFI), the feature scheme (three prior axes vs. six real MSigDB pathways vs. 48 single genes) and the training direction (LUAD\u2192LUSC and LUSC\u2192LUAD). A second analysis module relates the three axes to the tumour immune microenvironment using pathway-level activity proxies from real MSigDB C5 GO:BP and HALLMARK entries, reported explicitly as activity proxies rather than deconvolution estimates.</p><p><b>Result.</b> The axes associate with myeloid inflammatory activity but do not predict survival: internal hold-out C-index 0.488 and a median repeated-split test C-index of approximately 0.50. The prognostic result is reported as an honest negative rather than a rescued model.</p><p><b>Reproducibility.</b> All scripts are shipped unmodified except for one hard-coded project root, which <code>relocate.py</code> rewrites on the user's machine. Derived result tables are included so that every reported number can be checked without re-downloading the 720 MB expression matrix. <code>CHECKSUMS.sha256</code> covers every file in this deposit, and the MSigDB version is pinned by byte-level md5 comparison against the Broad public release archive.</p><p><b>Note.</b> The TCGA expression matrix, the TCGA-CDR clinical table, the sample barcode list and the MSigDB gene sets are third-party public data and are <i>not</i> redistributed here; all accessions, download locations and locally verified fingerprints are listed in DATA_SOURCES.md.</p>",
+  "license": "MIT",
+  "upload_type": "software",
+  "access_right": "open",
+  "language": "eng",
+  "version": "1.0.0",
+  "publication_date": "2026-10-16",
+  "keywords": [
+    "non-small cell lung cancer",
+    "advanced lung cancer inflammation index",
+    "nutritional status",
+    "tumour immune microenvironment",
+    "myeloid inflammation",
+    "transcriptomic signature",
+    "ssGSEA",
+    "LASSO-Cox",
+    "TCGA",
+    "reproducibility"
+  ],
+  "communities": [],
+  "related_identifiers": [
+    {
+      "identifier": "10.1038/nature13385",
+      "relation": "cites",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1038/nature11404",
+      "relation": "cites",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1038/nbt.3772",
+      "relation": "cites",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1093/bioinformatics/btv377",
+      "relation": "cites",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1038/s41587-020-0546-8",
+      "relation": "cites",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1016/j.cell.2018.02.052",
+      "relation": "cites",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1038/nature08460",
+      "relation": "cites",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1186/1471-2105-14-7",
+      "relation": "cites",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1073/pnas.0506580102",
+      "relation": "cites",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1016/j.cels.2015.12.004",
+      "relation": "cites",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.18637/jss.v033.i01",
+      "relation": "cites",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1016/s0140-6736(05)17866-0",
+      "relation": "cites",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1093/bioinformatics/bth469",
+      "relation": "cites",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1371/journal.pcbi.1002240",
+      "relation": "cites",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1002/(sici)1097-0258(19960229)15:4<361::aid-sim168>3.0.co;2-4",
+      "relation": "cites",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    }
+  ],
+  "creators": [
+    {
+      "name": "Yang, Yuanjing",
+      "affiliation": "Department of Science and Education, Yongchuan District People's Hospital of Chongqing"
+    },
+    {
+      "name": "Hu, Qi",
+      "affiliation": "Department of Endocrinology, Yongchuan District People's Hospital of Chongqing"
+    },
+    {
+      "name": "Luo, Jianqiong",
+      "affiliation": "Health Management Center, Yongchuan District People's Hospital of Chongqing"
+    },
+    {
+      "name": "Chen, Mingxiang",
+      "affiliation": "Department of Hepatobiliary, Vascular and Hernia Surgery, Shapingba Hospital Affiliated to Chongqing University",
+      "orcid": "0000-0002-0997-0957"
+    }
+  ]
+}

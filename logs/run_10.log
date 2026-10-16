@@ -1,0 +1,31 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+[00_setup] 配置完成。基因集规模: nutrition_liver=16, neutrophil=16, lymphocyte=16
+[10] Figure 2 完成
+[10] Figure 3 完成
+Warning message:
+`geom_errorbarh()` was deprecated in ggplot2 4.0.0.
+i Please use the `orientation` argument of `geom_errorbar()` instead. 
+`height` was translated to `width`.
+`height` was translated to `width`.
+`height` was translated to `width`.
+`height` was translated to `width`.
+[10] Figure 4 完成（bootstrap CI 已写入 results/figure_data/）
+Warning message:
+Removed 2 rows containing missing values or values outside the scale range
+(`geom_bar()`). 
+Warning message:
+Removed 2 rows containing missing values or values outside the scale range
+(`geom_bar()`). 
+[10] Figure 5 完成
+
+[10] 全部图已生成：
+ [1] "fig2_axis_immune_heatmap.pdf"     "fig2_axis_immune_heatmap.png"    
+ [3] "fig2_km_lusc.png"                 "fig3_lasso_lambda.png"           
+ [5] "fig3_nutrition_group_boxplot.pdf" "fig3_nutrition_group_boxplot.png"
+ [7] "fig4_forest_luad.png"             "fig4_nutrition_effect_forest.pdf"
+ [9] "fig4_nutrition_effect_forest.png" "fig5_immune_heatmap.png"         
+[11] "fig5_internal_validation.pdf"     "fig5_internal_validation.png"    

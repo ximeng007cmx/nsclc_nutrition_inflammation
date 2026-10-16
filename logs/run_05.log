@@ -1,0 +1,26 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+
+========== 步骤 05 ==========
+[00_setup] 配置完成。基因集规模: nutrition_liver=16, neutrophil=16, lymphocyte=16
+[05] 终点敏感性结果：
+   endpoint cohort     n events cindex logrank_p n_axis_sel
+     <char> <char> <int>  <int>  <num>     <num>      <int>
+1:       OS   LUAD   500    182 0.5406    0.0996          3
+2:       OS   LUSC   491    211 0.5443    0.0700          1
+3:      DSS   LUAD   465    112 0.5347    0.8711          3
+4:      DSS   LUSC   439     86 0.5693    0.0031          1
+5:      PFI   LUAD   500    206 0.5423    0.0551          3
+6:      PFI   LUSC   491    143 0.5610    0.0805          3
+                                       note
+                                     <char>
+1:    \346\234\200\345\274\272\345\215\225\350\275\264 P=0.353; s_used=0.000504
+2: \346\234\200\345\274\272\345\215\225\350\275\264 P=0.0462; s_used=lambda.min
+3:   \346\234\200\345\274\272\345\215\225\350\275\264 P=0.223; s_used=0.0003842
+4: \346\234\200\345\274\272\345\215\225\350\275\264 P=0.0335; s_used=lambda.min
+5: \346\234\200\345\274\272\345\215\225\350\275\264 P=0.0379; s_used=lambda.min
+6:   \346\234\200\345\274\272\345\215\225\350\275\264 P=0.187; s_used=0.0004298
+---- 步骤 05 完成，用时 4.7 秒 ----

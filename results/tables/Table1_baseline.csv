@@ -1,0 +1,14 @@
+Characteristic,LUAD,LUSC
+"Age, median (IQR)",66 (59–72),68 (62–73)
+"Deaths, n (%)",182 (36.4),211 (43.0)
+"Follow-up of censored, median (IQR), days",670 (469–1129),749 (395–1367)
+"Male, n (%)",230 (46.0),364 (74.1)
+"OS time, median (IQR), days",656 (423–1127),660 (323–1264)
+"Patients, n",500,491
+"Stage early (I–II), n (%)",388 (77.6),397 (80.9)
+"Stage late (III–IV), n (%)",104 (20.8),90 (18.3)
+"Stage other/unclassified, n (%)",8 (1.6),4 (0.8)
+"Stage unknown, n (%)",0 (0.0),0 (0.0)
+"lymphocyte score, median (IQR)",0.561 (0.482–0.633),0.558 (0.474–0.642)
+"neutrophil score, median (IQR)",0.329 (0.257–0.403),0.326 (0.256–0.391)
+"nutrition_liver score, median (IQR)",0.183 (0.108–0.302),0.202 (0.116–0.307)

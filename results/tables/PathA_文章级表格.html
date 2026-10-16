@@ -1,0 +1,307 @@
+<!DOCTYPE html><html lang='zh'><head><meta charset='utf-8'>
+<title>Path A 文章级表格</title><style>
+body{font-family:'Segoe UI',system-ui,-apple-system,'Microsoft YaHei',sans-serif;
+max-width:1180px;margin:36px auto;padding:0 22px;line-height:1.6;color:#222;background:#fff}
+h1{font-size:1.6rem;border-bottom:3px solid #2C6E9B;padding-bottom:.4rem}
+h2{font-size:1.12rem;margin-top:2.2rem;color:#1B4B70}
+table{border-collapse:collapse;width:100%;margin:.7rem 0 0;font-size:.86rem}
+th,td{border:1px solid #d6dee5;padding:6px 9px;text-align:left;vertical-align:top}
+th{background:#eef4f9;font-weight:600}tr:nth-child(even) td{background:#fafcfe}
+.cap{font-size:.86rem;color:#555;background:#f7f9fb;border-left:4px solid #2C6E9B;
+padding:8px 12px;margin-bottom:.3rem}blockquote{color:#555;font-size:.9rem}
+</style></head><body>
+<h1>Path A — 文章级表格</h1>
+<p>营养-炎症分子特征 × 非小细胞肺癌免疫微环境（生成日期 2026-10-16）</p>
+<h2>Table 1. Baseline characteristics of the study cohorts</h2>
+<div class='cap'>TCGA-LUAD (training cohort) and TCGA-LUSC (cross-histology validation cohort). Clinical data from TCGA-CDR (Liu J et al., Cell 2018; PMID 29625055). Signature scores are ssGSEA values of the three nutrition–inflammation axes.</div>
+<table>
+<thead><tr><th>Characteristic</th><th>LUAD</th><th>LUSC</th></tr></thead>
+<tbody>
+<tr><td>Age, median (IQR)</td><td>66 (59–72)</td><td>68 (62–73)</td></tr>
+<tr><td>Deaths, n (%)</td><td>182 (36.4)</td><td>211 (43.0)</td></tr>
+<tr><td>Follow-up of censored, median (IQR), days</td><td>670 (469–1129)</td><td>749 (395–1367)</td></tr>
+<tr><td>Male, n (%)</td><td>230 (46.0)</td><td>364 (74.1)</td></tr>
+<tr><td>OS time, median (IQR), days</td><td>656 (423–1127)</td><td>660 (323–1264)</td></tr>
+<tr><td>Patients, n</td><td>500</td><td>491</td></tr>
+<tr><td>Stage early (I–II), n (%)</td><td>388 (77.6)</td><td>397 (80.9)</td></tr>
+<tr><td>Stage late (III–IV), n (%)</td><td>104 (20.8)</td><td>90 (18.3)</td></tr>
+<tr><td>Stage other/unclassified, n (%)</td><td>8 (1.6)</td><td>4 (0.8)</td></tr>
+<tr><td>Stage unknown, n (%)</td><td>0 (0.0)</td><td>0 (0.0)</td></tr>
+<tr><td>lymphocyte score, median (IQR)</td><td>0.561 (0.482–0.633)</td><td>0.558 (0.474–0.642)</td></tr>
+<tr><td>neutrophil score, median (IQR)</td><td>0.329 (0.257–0.403)</td><td>0.326 (0.256–0.391)</td></tr>
+<tr><td>nutrition_liver score, median (IQR)</td><td>0.183 (0.108–0.302)</td><td>0.202 (0.116–0.307)</td></tr>
+</tbody></table>
+
+<h2>Table 2. Correlation between nutrition–inflammation axes and immune features</h2>
+<div class='cap'>Spearman correlations across 1,011 primary tumour samples. Immune features are MSigDB pathway-level activity proxies (GO Biological Process and Hallmark; see Table S4b for set sizes and checksums), NOT deconvolution estimates. &#x27;No overlapping genes&#x27; indicates the axis and the immune feature share no genes, so the correlation is not definitional. FDR = Benjamini–Hochberg.</div>
+<table>
+<thead><tr><th>Nutrition–inflammation axis</th><th>Immune feature (MSigDB)</th><th>Set size</th><th>Overlapping genes</th><th>Spearman rho</th><th>P</th><th>FDR</th><th>Type</th></tr></thead>
+<tbody>
+<tr><td>lymphocyte</td><td>HALLMARK_ALLOGRAFT_REJECTION</td><td>195</td><td>11</td><td>0.922</td><td>&lt;1e-300</td><td>&lt;1e-300</td><td>Overlapping genes</td></tr>
+<tr><td>lymphocyte</td><td>GOBP_T_CELL_ACTIVATION</td><td>566</td><td>10</td><td>0.905</td><td>&lt;1e-300</td><td>&lt;1e-300</td><td>Overlapping genes</td></tr>
+<tr><td>lymphocyte</td><td>GOBP_REGULATORY_T_CELL_DIFFERENTIATION</td><td>40</td><td>1</td><td>0.896</td><td>&lt;1e-300</td><td>&lt;1e-300</td><td>Overlapping genes</td></tr>
+<tr><td>lymphocyte</td><td>GOBP_NATURAL_KILLER_CELL_ACTIVATION</td><td>97</td><td>0</td><td>0.865</td><td>&lt;1e-300</td><td>&lt;1e-300</td><td>No overlapping genes</td></tr>
+<tr><td>lymphocyte</td><td>GOBP_B_CELL_ACTIVATION</td><td>269</td><td>2</td><td>0.847</td><td>&lt;1e-300</td><td>&lt;1e-300</td><td>Overlapping genes</td></tr>
+<tr><td>lymphocyte</td><td>GOBP_MYELOID_DENDRITIC_CELL_ACTIVATION</td><td>29</td><td>0</td><td>0.840</td><td>&lt;1e-300</td><td>&lt;1e-300</td><td>No overlapping genes</td></tr>
+<tr><td>lymphocyte</td><td>HALLMARK_INTERFERON_GAMMA_RESPONSE</td><td>196</td><td>2</td><td>0.831</td><td>&lt;1e-300</td><td>&lt;1e-300</td><td>Overlapping genes</td></tr>
+<tr><td>lymphocyte</td><td>GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION</td><td>113</td><td>2</td><td>0.812</td><td>&lt;1e-300</td><td>&lt;1e-300</td><td>Overlapping genes</td></tr>
+<tr><td>lymphocyte</td><td>HALLMARK_INFLAMMATORY_RESPONSE</td><td>199</td><td>5</td><td>0.704</td><td>&lt;1e-300</td><td>&lt;1e-300</td><td>Overlapping genes</td></tr>
+<tr><td>lymphocyte</td><td>GOBP_MAST_CELL_ACTIVATION</td><td>70</td><td>0</td><td>0.649</td><td>&lt;1e-300</td><td>&lt;1e-300</td><td>No overlapping genes</td></tr>
+<tr><td>lymphocyte</td><td>GOBP_MACROPHAGE_ACTIVATION</td><td>109</td><td>0</td><td>0.646</td><td>&lt;1e-300</td><td>&lt;1e-300</td><td>No overlapping genes</td></tr>
+<tr><td>lymphocyte</td><td>GOBP_NEUTROPHIL_DEGRANULATION</td><td>14</td><td>0</td><td>0.590</td><td>&lt;1e-300</td><td>&lt;1e-300</td><td>No overlapping genes</td></tr>
+<tr><td>lymphocyte</td><td>GOBP_MONOCYTE_ACTIVATION</td><td>12</td><td>0</td><td>0.421</td><td>&lt;1e-300</td><td>&lt;1e-300</td><td>No overlapping genes</td></tr>
+<tr><td>neutrophil</td><td>HALLMARK_INFLAMMATORY_RESPONSE</td><td>199</td><td>1</td><td>0.629</td><td>&lt;1e-300</td><td>&lt;1e-300</td><td>Overlapping genes</td></tr>
+<tr><td>neutrophil</td><td>GOBP_MAST_CELL_ACTIVATION</td><td>70</td><td>1</td><td>0.624</td><td>&lt;1e-300</td><td>&lt;1e-300</td><td>Overlapping genes</td></tr>
+<tr><td>neutrophil</td><td>GOBP_NEUTROPHIL_DEGRANULATION</td><td>14</td><td>0</td><td>0.611</td><td>&lt;1e-300</td><td>&lt;1e-300</td><td>No overlapping genes</td></tr>
+<tr><td>neutrophil</td><td>GOBP_T_CELL_ACTIVATION</td><td>566</td><td>1</td><td>0.598</td><td>&lt;1e-300</td><td>&lt;1e-300</td><td>Overlapping genes</td></tr>
+<tr><td>neutrophil</td><td>GOBP_B_CELL_ACTIVATION</td><td>269</td><td>0</td><td>0.572</td><td>&lt;1e-300</td><td>&lt;1e-300</td><td>No overlapping genes</td></tr>
+<tr><td>neutrophil</td><td>GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION</td><td>113</td><td>0</td><td>0.566</td><td>&lt;1e-300</td><td>&lt;1e-300</td><td>No overlapping genes</td></tr>
+<tr><td>neutrophil</td><td>HALLMARK_ALLOGRAFT_REJECTION</td><td>195</td><td>2</td><td>0.560</td><td>&lt;1e-300</td><td>&lt;1e-300</td><td>Overlapping genes</td></tr>
+<tr><td>neutrophil</td><td>GOBP_MYELOID_DENDRITIC_CELL_ACTIVATION</td><td>29</td><td>0</td><td>0.524</td><td>&lt;1e-300</td><td>&lt;1e-300</td><td>No overlapping genes</td></tr>
+<tr><td>neutrophil</td><td>GOBP_NATURAL_KILLER_CELL_ACTIVATION</td><td>97</td><td>0</td><td>0.520</td><td>&lt;1e-300</td><td>&lt;1e-300</td><td>No overlapping genes</td></tr>
+<tr><td>neutrophil</td><td>GOBP_MACROPHAGE_ACTIVATION</td><td>109</td><td>0</td><td>0.516</td><td>&lt;1e-300</td><td>&lt;1e-300</td><td>No overlapping genes</td></tr>
+<tr><td>neutrophil</td><td>HALLMARK_INTERFERON_GAMMA_RESPONSE</td><td>196</td><td>1</td><td>0.497</td><td>&lt;1e-300</td><td>&lt;1e-300</td><td>Overlapping genes</td></tr>
+<tr><td>neutrophil</td><td>GOBP_REGULATORY_T_CELL_DIFFERENTIATION</td><td>40</td><td>0</td><td>0.456</td><td>&lt;1e-300</td><td>&lt;1e-300</td><td>No overlapping genes</td></tr>
+<tr><td>neutrophil</td><td>GOBP_MONOCYTE_ACTIVATION</td><td>12</td><td>0</td><td>0.335</td><td>&lt;1e-300</td><td>&lt;1e-300</td><td>No overlapping genes</td></tr>
+<tr><td>nutrition_liver</td><td>GOBP_MACROPHAGE_ACTIVATION</td><td>109</td><td>0</td><td>0.276</td><td>5.3e-19</td><td>7.6e-19</td><td>No overlapping genes</td></tr>
+<tr><td>nutrition_liver</td><td>GOBP_MONOCYTE_ACTIVATION</td><td>12</td><td>0</td><td>0.255</td><td>2.6e-16</td><td>3.6e-16</td><td>No overlapping genes</td></tr>
+<tr><td>nutrition_liver</td><td>HALLMARK_INFLAMMATORY_RESPONSE</td><td>199</td><td>0</td><td>0.250</td><td>8.1e-16</td><td>1.1e-15</td><td>No overlapping genes</td></tr>
+<tr><td>nutrition_liver</td><td>GOBP_MAST_CELL_ACTIVATION</td><td>70</td><td>0</td><td>0.226</td><td>4.6e-13</td><td>5.9e-13</td><td>No overlapping genes</td></tr>
+<tr><td>nutrition_liver</td><td>GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION</td><td>113</td><td>0</td><td>0.197</td><td>3.2e-10</td><td>4.0e-10</td><td>No overlapping genes</td></tr>
+<tr><td>nutrition_liver</td><td>HALLMARK_ALLOGRAFT_REJECTION</td><td>195</td><td>0</td><td>0.176</td><td>1.7e-08</td><td>2.1e-08</td><td>No overlapping genes</td></tr>
+<tr><td>nutrition_liver</td><td>GOBP_T_CELL_ACTIVATION</td><td>566</td><td>0</td><td>0.165</td><td>1.4e-07</td><td>1.7e-07</td><td>No overlapping genes</td></tr>
+<tr><td>nutrition_liver</td><td>GOBP_MYELOID_DENDRITIC_CELL_ACTIVATION</td><td>29</td><td>0</td><td>0.152</td><td>1.2e-06</td><td>1.4e-06</td><td>No overlapping genes</td></tr>
+<tr><td>nutrition_liver</td><td>HALLMARK_INTERFERON_GAMMA_RESPONSE</td><td>196</td><td>0</td><td>0.144</td><td>4.6e-06</td><td>5.2e-06</td><td>No overlapping genes</td></tr>
+<tr><td>nutrition_liver</td><td>GOBP_B_CELL_ACTIVATION</td><td>269</td><td>0</td><td>0.114</td><td>2.7e-04</td><td>3.0e-04</td><td>No overlapping genes</td></tr>
+<tr><td>nutrition_liver</td><td>GOBP_NATURAL_KILLER_CELL_ACTIVATION</td><td>97</td><td>0</td><td>0.108</td><td>5.9e-04</td><td>6.2e-04</td><td>No overlapping genes</td></tr>
+<tr><td>nutrition_liver</td><td>GOBP_REGULATORY_T_CELL_DIFFERENTIATION</td><td>40</td><td>0</td><td>0.100</td><td>0.002</td><td>0.002</td><td>No overlapping genes</td></tr>
+<tr><td>nutrition_liver</td><td>GOBP_NEUTROPHIL_DEGRANULATION</td><td>14</td><td>0</td><td>0.099</td><td>0.002</td><td>0.002</td><td>No overlapping genes</td></tr>
+</tbody></table>
+
+<h2>Table 3. Correlation between nutrition–inflammation axes and immune checkpoint / effector genes</h2>
+<div class='cap'>Spearman correlations with single-gene expression (log2(FPKM+1)). Checkpoint panel: PDCD1, CD274, PDCD1LG2, CTLA4, LAG3, HAVCR2, TIGIT, IDO1, SIGLEC15. Effector panel: IFNG, GZMA, GZMB, PRF1, CXCL9, CXCL10, CXCL11, HLA-DRA, STAT1, CCR5.</div>
+<table>
+<thead><tr><th>gene</th><th>panel</th><th>nutrition_liver (rho)</th><th>neutrophil (rho)</th><th>lymphocyte (rho)</th><th>nutrition_liver P</th><th>neutrophil P</th><th>lymphocyte P</th></tr></thead>
+<tbody>
+<tr><td>CCR5</td><td>Effector / TIS-like</td><td>0.142</td><td>0.335</td><td>0.807</td><td>6.3e-06</td><td>6.1e-28</td><td>1.8e-233</td></tr>
+<tr><td>CXCL10</td><td>Effector / TIS-like</td><td>0.059</td><td>0.252</td><td>0.733</td><td>0.062</td><td>4.1e-16</td><td>3.3e-171</td></tr>
+<tr><td>CXCL11</td><td>Effector / TIS-like</td><td>0.031</td><td>0.245</td><td>0.675</td><td>0.319</td><td>3.1e-15</td><td>2.4e-135</td></tr>
+<tr><td>CXCL9</td><td>Effector / TIS-like</td><td>0.087</td><td>0.261</td><td>0.835</td><td>0.005</td><td>3.8e-17</td><td>1.6e-264</td></tr>
+<tr><td>GZMA</td><td>Effector / TIS-like</td><td>0.156</td><td>0.379</td><td>0.914</td><td>6.7e-07</td><td>7.6e-36</td><td>&lt;1e-300</td></tr>
+<tr><td>GZMB</td><td>Effector / TIS-like</td><td>0.070</td><td>0.454</td><td>0.838</td><td>0.026</td><td>1.5e-52</td><td>3.5e-267</td></tr>
+<tr><td>HLA-DRA</td><td>Effector / TIS-like</td><td>0.156</td><td>0.370</td><td>0.731</td><td>6.2e-07</td><td>4.2e-34</td><td>6.1e-170</td></tr>
+<tr><td>IFNG</td><td>Effector / TIS-like</td><td>0.033</td><td>0.303</td><td>0.814</td><td>0.297</td><td>6.6e-23</td><td>1.4e-240</td></tr>
+<tr><td>PRF1</td><td>Effector / TIS-like</td><td>0.116</td><td>0.404</td><td>0.870</td><td>2.2e-04</td><td>7.0e-41</td><td>&lt;1e-300</td></tr>
+<tr><td>STAT1</td><td>Effector / TIS-like</td><td>-0.014</td><td>0.213</td><td>0.587</td><td>0.660</td><td>7.7e-12</td><td>1.1e-94</td></tr>
+<tr><td>CD274</td><td>Immune checkpoint</td><td>-0.026</td><td>0.284</td><td>0.565</td><td>0.409</td><td>3.6e-20</td><td>2.3e-86</td></tr>
+<tr><td>CTLA4</td><td>Immune checkpoint</td><td>0.038</td><td>0.423</td><td>0.800</td><td>0.233</td><td>4.0e-45</td><td>3.6e-226</td></tr>
+<tr><td>HAVCR2</td><td>Immune checkpoint</td><td>0.142</td><td>0.255</td><td>0.522</td><td>5.4e-06</td><td>1.6e-16</td><td>9.3e-72</td></tr>
+<tr><td>IDO1</td><td>Immune checkpoint</td><td>0.098</td><td>0.297</td><td>0.732</td><td>0.002</td><td>4.5e-22</td><td>4.0e-170</td></tr>
+<tr><td>LAG3</td><td>Immune checkpoint</td><td>0.027</td><td>0.243</td><td>0.766</td><td>0.397</td><td>4.5e-15</td><td>2.0e-195</td></tr>
+<tr><td>PDCD1</td><td>Immune checkpoint</td><td>0.052</td><td>0.345</td><td>0.866</td><td>0.096</td><td>1.2e-29</td><td>&lt;1e-300</td></tr>
+<tr><td>PDCD1LG2</td><td>Immune checkpoint</td><td>0.066</td><td>0.323</td><td>0.666</td><td>0.037</td><td>6.1e-26</td><td>1.6e-130</td></tr>
+<tr><td>SIGLEC15</td><td>Immune checkpoint</td><td>0.059</td><td>0.157</td><td>0.185</td><td>0.059</td><td>5.6e-07</td><td>3.0e-09</td></tr>
+<tr><td>TIGIT</td><td>Immune checkpoint</td><td>0.057</td><td>0.406</td><td>0.899</td><td>0.071</td><td>2.6e-41</td><td>&lt;1e-300</td></tr>
+</tbody></table>
+
+<h2>Table 4. Internal validation of the prognostic score (negative result)</h2>
+<div class='cap'>LUAD split 7:3 at RANDOM (sample.int(); NOT stratified by event status — observed event rates 38.3% training vs 32.0% held-out, against 36.4% expected under stratification); feature selection (univariate Cox P&lt;0.10) and standardisation performed within the training set only. The held-out C-index is at chance level, indicating the three a-priori axes carry no prognostic discrimination in LUAD; the previously reported C-index of 0.541 was an over-optimistic value from fitting on the full dataset.</div>
+<table>
+<thead><tr><th>Analysis</th><th>Value</th><th>Note</th></tr></thead>
+<tbody>
+<tr><td>Single 7:3 split — training set</td><td>0.536</td><td>Features selected within training set only</td></tr>
+<tr><td>Single 7:3 split — held-out test set</td><td>0.488 (log-rank P = 0.822)</td><td>Selected by univariate Cox (P&lt;0.10) then LASSO-Cox</td></tr>
+<tr><td>Repeated 100 splits — test set, median [2.5th–97.5th]</td><td>0.501 [0.438–0.560]</td><td>Same procedure re-run on 100 random splits</td></tr>
+<tr><td>Mean optimism (training − test C)</td><td>0.031</td><td>Shows the degree of over-optimism in internally fitted C-index</td></tr>
+</tbody></table>
+
+<h2>Table 5. Immune features by nutrition-axis group (independent of definitional overlap)</h2>
+<div class='cap'>Samples dichotomised at the median of the nutrition_liver axis, which shares NO genes with any immune feature. Higher nutrition-axis expression is associated with higher activity of myeloid/monocyte/macrophage and inflammatory pathways. Wilcoxon rank-sum test; FDR = Benjamini–Hochberg.</div>
+<table>
+<thead><tr><th>immune_feature</th><th>Median (nutrition-high)</th><th>Median (nutrition-low)</th><th>Difference</th><th>P</th><th>FDR</th></tr></thead>
+<tbody>
+<tr><td>GOBP_MONOCYTE_ACTIVATION</td><td>1.160</td><td>1.106</td><td>0.054</td><td>6.7e-16</td><td>2.2e-15</td></tr>
+<tr><td>HALLMARK_INFLAMMATORY_RESPONSE</td><td>1.081</td><td>1.032</td><td>0.050</td><td>4.4e-16</td><td>1.9e-15</td></tr>
+<tr><td>HALLMARK_ALLOGRAFT_REJECTION</td><td>1.123</td><td>1.083</td><td>0.040</td><td>2.0e-09</td><td>4.2e-09</td></tr>
+<tr><td>GOBP_MAST_CELL_ACTIVATION</td><td>0.945</td><td>0.905</td><td>0.040</td><td>4.4e-16</td><td>1.9e-15</td></tr>
+<tr><td>GOBP_MACROPHAGE_ACTIVATION</td><td>1.003</td><td>0.968</td><td>0.035</td><td>&lt;1e-300</td><td>&lt;1e-300</td></tr>
+<tr><td>GOBP_MYELOID_DENDRITIC_CELL_ACTIVATION</td><td>1.053</td><td>1.018</td><td>0.034</td><td>5.0e-08</td><td>8.1e-08</td></tr>
+<tr><td>GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION</td><td>1.250</td><td>1.223</td><td>0.026</td><td>1.4e-10</td><td>3.7e-10</td></tr>
+<tr><td>HALLMARK_INTERFERON_GAMMA_RESPONSE</td><td>1.305</td><td>1.280</td><td>0.026</td><td>6.6e-07</td><td>9.5e-07</td></tr>
+<tr><td>GOBP_REGULATORY_T_CELL_DIFFERENTIATION</td><td>0.978</td><td>0.952</td><td>0.025</td><td>1.1e-04</td><td>1.1e-04</td></tr>
+<tr><td>GOBP_NATURAL_KILLER_CELL_ACTIVATION</td><td>0.753</td><td>0.728</td><td>0.025</td><td>1.9e-05</td><td>2.2e-05</td></tr>
+<tr><td>GOBP_T_CELL_ACTIVATION</td><td>1.072</td><td>1.049</td><td>0.023</td><td>3.9e-09</td><td>7.2e-09</td></tr>
+<tr><td>GOBP_B_CELL_ACTIVATION</td><td>1.009</td><td>0.988</td><td>0.021</td><td>2.9e-06</td><td>3.8e-06</td></tr>
+<tr><td>GOBP_NEUTROPHIL_DEGRANULATION</td><td>1.215</td><td>1.206</td><td>0.009</td><td>8.0e-05</td><td>8.7e-05</td></tr>
+</tbody></table>
+
+<h2>Table S1. Sensitivity analysis across endpoints (OS / DSS / PFI)</h2>
+<div class='cap'>Same pipeline re-run with each endpoint. LUAD is essentially flat across endpoints (C-index 0.535–0.542); LUSC shows a significant association for DSS. Endpoints therefore do not rescue the LUAD training signal.</div>
+<table>
+<thead><tr><th>Endpoint</th><th>Cohort</th><th>n</th><th>Events</th><th>C-index</th><th>P</th><th>Axes selected</th><th>Note</th></tr></thead>
+<tbody>
+<tr><td>OS</td><td>LUAD</td><td>500</td><td>182</td><td>0.541</td><td>0.100</td><td>3</td><td>strongest single axis P=0.353; s_used=0.000504</td></tr>
+<tr><td>OS</td><td>LUSC</td><td>491</td><td>211</td><td>0.544</td><td>0.070</td><td>1</td><td>strongest single axis P=0.0462; s_used=lambda.min</td></tr>
+<tr><td>DSS</td><td>LUAD</td><td>465</td><td>112</td><td>0.535</td><td>0.871</td><td>3</td><td>strongest single axis P=0.223; s_used=0.0003842</td></tr>
+<tr><td>DSS</td><td>LUSC</td><td>439</td><td>86</td><td>0.569</td><td>0.003</td><td>1</td><td>strongest single axis P=0.0335; s_used=lambda.min</td></tr>
+<tr><td>PFI</td><td>LUAD</td><td>500</td><td>206</td><td>0.542</td><td>0.055</td><td>3</td><td>strongest single axis P=0.0379; s_used=lambda.min</td></tr>
+<tr><td>PFI</td><td>LUSC</td><td>491</td><td>143</td><td>0.561</td><td>0.080</td><td>3</td><td>strongest single axis P=0.187; s_used=0.0004298</td></tr>
+</tbody></table>
+
+<h2>Table S2. Sensitivity analysis across feature schemes and training directions</h2>
+<div class='cap'>S0 = three a-priori axes (16 genes each); S1 = six MSigDB pathways (1,325 genes); S2 = 48 prior genes entered directly into LASSO-Cox. Internal C-index rises with feature number while external C-index falls — a direct demonstration of overfitting. Cross-histology validation ceiling ≈ 0.55.</div>
+<table>
+<thead><tr><th>Endpoint</th><th>Training</th><th>Validation</th><th>Scheme</th><th>n features</th><th>n selected</th><th>C train</th><th>C test</th><th>P</th></tr></thead>
+<tbody>
+<tr><td>OS</td><td>LUAD</td><td>LUSC</td><td>S0_prior16</td><td>3</td><td>3</td><td>0.541</td><td>0.550</td><td>0.560</td></tr>
+<tr><td>OS</td><td>LUAD</td><td>LUSC</td><td>S1_msigdb6</td><td>6</td><td>5</td><td>0.583</td><td>0.518</td><td>0.677</td></tr>
+<tr><td>OS</td><td>LUAD</td><td>LUSC</td><td>S2_genes48</td><td>48</td><td>47</td><td>0.659</td><td>0.516</td><td>0.728</td></tr>
+<tr><td>OS</td><td>LUSC</td><td>LUAD</td><td>S0_prior16</td><td>3</td><td>1</td><td>0.544</td><td>0.525</td><td>0.797</td></tr>
+<tr><td>OS</td><td>LUSC</td><td>LUAD</td><td>S1_msigdb6</td><td>6</td><td>6</td><td>0.531</td><td>0.514</td><td>0.799</td></tr>
+<tr><td>OS</td><td>LUSC</td><td>LUAD</td><td>S2_genes48</td><td>48</td><td>1</td><td>0.557</td><td>0.477</td><td>0.869</td></tr>
+<tr><td>PFI</td><td>LUAD</td><td>LUSC</td><td>S0_prior16</td><td>3</td><td>3</td><td>0.542</td><td>0.550</td><td>0.130</td></tr>
+<tr><td>PFI</td><td>LUAD</td><td>LUSC</td><td>S1_msigdb6</td><td>6</td><td>3</td><td>0.541</td><td>0.534</td><td>0.268</td></tr>
+<tr><td>PFI</td><td>LUAD</td><td>LUSC</td><td>S2_genes48</td><td>48</td><td>1</td><td>0.545</td><td>0.530</td><td>0.474</td></tr>
+<tr><td>PFI</td><td>LUSC</td><td>LUAD</td><td>S0_prior16</td><td>3</td><td>3</td><td>0.561</td><td>0.522</td><td>0.781</td></tr>
+<tr><td>PFI</td><td>LUSC</td><td>LUAD</td><td>S1_msigdb6</td><td>6</td><td>6</td><td>0.516</td><td>0.533</td><td>0.204</td></tr>
+<tr><td>PFI</td><td>LUSC</td><td>LUAD</td><td>S2_genes48</td><td>48</td><td>46</td><td>0.652</td><td>0.541</td><td>0.512</td></tr>
+</tbody></table>
+
+<h2>Table S3. Immune features by composite risk score (definitional consistency check)</h2>
+<div class='cap'>CAUTION: the composite score contains the lymphocyte axis with a negative coefficient, so lower immune activity in the high-score group is partly definitional. This table is provided for completeness only; Table 5 is the non-circular analysis.</div>
+<table>
+<thead><tr><th>immune_feature</th><th>Median (high score)</th><th>Median (low score)</th><th>Difference</th><th>P</th><th>FDR</th></tr></thead>
+<tbody>
+<tr><td>GOBP_NEUTROPHIL_DEGRANULATION</td><td>1.196</td><td>1.218</td><td>-0.022</td><td>3.0e-06</td><td>3.0e-06</td></tr>
+<tr><td>GOBP_MAST_CELL_ACTIVATION</td><td>0.906</td><td>0.942</td><td>-0.035</td><td>1.4e-12</td><td>1.5e-12</td></tr>
+<tr><td>GOBP_MACROPHAGE_ACTIVATION</td><td>0.963</td><td>1.009</td><td>-0.046</td><td>8.3e-24</td><td>1.2e-23</td></tr>
+<tr><td>GOBP_B_CELL_ACTIVATION</td><td>0.974</td><td>1.020</td><td>-0.046</td><td>1.7e-34</td><td>3.1e-34</td></tr>
+<tr><td>GOBP_MONOCYTE_ACTIVATION</td><td>1.106</td><td>1.160</td><td>-0.054</td><td>2.4e-16</td><td>2.9e-16</td></tr>
+<tr><td>GOBP_T_CELL_ACTIVATION</td><td>1.031</td><td>1.086</td><td>-0.056</td><td>3.6e-41</td><td>1.6e-40</td></tr>
+<tr><td>HALLMARK_INFLAMMATORY_RESPONSE</td><td>1.026</td><td>1.086</td><td>-0.060</td><td>3.2e-19</td><td>4.1e-19</td></tr>
+<tr><td>GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION</td><td>1.204</td><td>1.264</td><td>-0.060</td><td>5.1e-34</td><td>8.3e-34</td></tr>
+<tr><td>GOBP_NATURAL_KILLER_CELL_ACTIVATION</td><td>0.711</td><td>0.780</td><td>-0.069</td><td>2.7e-38</td><td>5.9e-38</td></tr>
+<tr><td>HALLMARK_INTERFERON_GAMMA_RESPONSE</td><td>1.264</td><td>1.334</td><td>-0.069</td><td>8.8e-39</td><td>2.3e-38</td></tr>
+<tr><td>GOBP_MYELOID_DENDRITIC_CELL_ACTIVATION</td><td>0.991</td><td>1.078</td><td>-0.087</td><td>2.7e-39</td><td>8.6e-39</td></tr>
+<tr><td>GOBP_REGULATORY_T_CELL_DIFFERENTIATION</td><td>0.923</td><td>1.011</td><td>-0.088</td><td>6.6e-52</td><td>8.6e-51</td></tr>
+<tr><td>HALLMARK_ALLOGRAFT_REJECTION</td><td>1.055</td><td>1.150</td><td>-0.095</td><td>4.0e-49</td><td>2.6e-48</td></tr>
+</tbody></table>
+
+<h2>Table S4a. Gene composition of the three a-priori nutrition–inflammation axes</h2>
+<div class='cap'>16 genes per axis, entered as a-priori definition (not data-driven selection). All 48 symbols were detected in the expression matrix. &#x27;detected_in_expression_matrix = N&#x27; would indicate a symbol dropped before scoring; there are none in this dataset.</div>
+<table>
+<thead><tr><th>axis</th><th>order_in_set</th><th>gene_symbol</th><th>detected_in_expression_matrix</th></tr></thead>
+<tbody>
+<tr><td>nutrition_liver</td><td>1</td><td>ALB</td><td>Y</td></tr>
+<tr><td>nutrition_liver</td><td>2</td><td>TF</td><td>Y</td></tr>
+<tr><td>nutrition_liver</td><td>3</td><td>RBP4</td><td>Y</td></tr>
+<tr><td>nutrition_liver</td><td>4</td><td>APOA1</td><td>Y</td></tr>
+<tr><td>nutrition_liver</td><td>5</td><td>APOA2</td><td>Y</td></tr>
+<tr><td>nutrition_liver</td><td>6</td><td>APOB</td><td>Y</td></tr>
+<tr><td>nutrition_liver</td><td>7</td><td>GC</td><td>Y</td></tr>
+<tr><td>nutrition_liver</td><td>8</td><td>TTR</td><td>Y</td></tr>
+<tr><td>nutrition_liver</td><td>9</td><td>HPX</td><td>Y</td></tr>
+<tr><td>nutrition_liver</td><td>10</td><td>SERPINA1</td><td>Y</td></tr>
+<tr><td>nutrition_liver</td><td>11</td><td>AHSG</td><td>Y</td></tr>
+<tr><td>nutrition_liver</td><td>12</td><td>ORM1</td><td>Y</td></tr>
+<tr><td>nutrition_liver</td><td>13</td><td>FGA</td><td>Y</td></tr>
+<tr><td>nutrition_liver</td><td>14</td><td>FGG</td><td>Y</td></tr>
+<tr><td>nutrition_liver</td><td>15</td><td>ITIH2</td><td>Y</td></tr>
+<tr><td>nutrition_liver</td><td>16</td><td>PLG</td><td>Y</td></tr>
+<tr><td>neutrophil</td><td>1</td><td>ELANE</td><td>Y</td></tr>
+<tr><td>neutrophil</td><td>2</td><td>MPO</td><td>Y</td></tr>
+<tr><td>neutrophil</td><td>3</td><td>LTF</td><td>Y</td></tr>
+<tr><td>neutrophil</td><td>4</td><td>CEACAM8</td><td>Y</td></tr>
+<tr><td>neutrophil</td><td>5</td><td>S100A8</td><td>Y</td></tr>
+<tr><td>neutrophil</td><td>6</td><td>S100A9</td><td>Y</td></tr>
+<tr><td>neutrophil</td><td>7</td><td>S100A12</td><td>Y</td></tr>
+<tr><td>neutrophil</td><td>8</td><td>MMP9</td><td>Y</td></tr>
+<tr><td>neutrophil</td><td>9</td><td>PADI4</td><td>Y</td></tr>
+<tr><td>neutrophil</td><td>10</td><td>CXCR2</td><td>Y</td></tr>
+<tr><td>neutrophil</td><td>11</td><td>FPR1</td><td>Y</td></tr>
+<tr><td>neutrophil</td><td>12</td><td>DEFA4</td><td>Y</td></tr>
+<tr><td>neutrophil</td><td>13</td><td>CAMP</td><td>Y</td></tr>
+<tr><td>neutrophil</td><td>14</td><td>LCN2</td><td>Y</td></tr>
+<tr><td>neutrophil</td><td>15</td><td>ARG1</td><td>Y</td></tr>
+<tr><td>neutrophil</td><td>16</td><td>OLFM4</td><td>Y</td></tr>
+<tr><td>lymphocyte</td><td>1</td><td>CD3D</td><td>Y</td></tr>
+<tr><td>lymphocyte</td><td>2</td><td>CD3E</td><td>Y</td></tr>
+<tr><td>lymphocyte</td><td>3</td><td>CD3G</td><td>Y</td></tr>
+<tr><td>lymphocyte</td><td>4</td><td>CD8A</td><td>Y</td></tr>
+<tr><td>lymphocyte</td><td>5</td><td>CD8B</td><td>Y</td></tr>
+<tr><td>lymphocyte</td><td>6</td><td>LCK</td><td>Y</td></tr>
+<tr><td>lymphocyte</td><td>7</td><td>GZMB</td><td>Y</td></tr>
+<tr><td>lymphocyte</td><td>8</td><td>GZMK</td><td>Y</td></tr>
+<tr><td>lymphocyte</td><td>9</td><td>PRF1</td><td>Y</td></tr>
+<tr><td>lymphocyte</td><td>10</td><td>IL7R</td><td>Y</td></tr>
+<tr><td>lymphocyte</td><td>11</td><td>CCL5</td><td>Y</td></tr>
+<tr><td>lymphocyte</td><td>12</td><td>CXCL10</td><td>Y</td></tr>
+<tr><td>lymphocyte</td><td>13</td><td>CXCR6</td><td>Y</td></tr>
+<tr><td>lymphocyte</td><td>14</td><td>CD27</td><td>Y</td></tr>
+<tr><td>lymphocyte</td><td>15</td><td>CXCL13</td><td>Y</td></tr>
+<tr><td>lymphocyte</td><td>16</td><td>HLA-DRA</td><td>Y</td></tr>
+</tbody></table>
+
+<h2>Table S4b. MSigDB immune features used as pathway-level activity proxies</h2>
+<div class='cap'>13 features (10 GO:BP + 3 Hallmark). &#x27;set_size_in_gmt&#x27; is the raw MSigDB entry size; &#x27;set_size_in_matrix&#x27; is the size after intersecting with the expression matrix. Overlap columns give the number of genes shared with each axis: the nutrition_liver axis shares 0 genes with all 13 features, which is what makes its correlations non-definitional. Source release is MSigDB v2024.1.Hs, established by byte-level matching against the public MSigDB release archive: md5 of h.all.symbols.gmt (d3606c325b9862bf3ea7991c2c2bf7d7) and of c5.go.bp.symbols.gmt (fd535c44825f9be3ea7c5d31e3d45f1d) each match v2024.1.Hs and no other release between v7.5.1 and v2026.1.Hs.</div>
+<table>
+<thead><tr><th>immune_feature</th><th>feature_label</th><th>collection</th><th>set_size_in_gmt</th><th>set_size_in_matrix</th><th>overlap_nutrition_liver</th><th>overlap_neutrophil</th><th>overlap_lymphocyte</th><th>shared_with_any_axis</th></tr></thead>
+<tbody>
+<tr><td>GOBP_T_CELL_ACTIVATION</td><td>T cell activation</td><td>GO:BP</td><td>579</td><td>566</td><td>0</td><td>1</td><td>10</td><td>Y</td></tr>
+<tr><td>GOBP_B_CELL_ACTIVATION</td><td>B cell activation</td><td>GO:BP</td><td>278</td><td>269</td><td>0</td><td>0</td><td>2</td><td>Y</td></tr>
+<tr><td>GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION</td><td>Antigen processing and presentation</td><td>GO:BP</td><td>118</td><td>113</td><td>0</td><td>0</td><td>2</td><td>Y</td></tr>
+<tr><td>GOBP_MACROPHAGE_ACTIVATION</td><td>Macrophage activation</td><td>GO:BP</td><td>112</td><td>109</td><td>0</td><td>0</td><td>0</td><td>N</td></tr>
+<tr><td>GOBP_NATURAL_KILLER_CELL_ACTIVATION</td><td>Natural killer cell activation</td><td>GO:BP</td><td>98</td><td>97</td><td>0</td><td>0</td><td>0</td><td>N</td></tr>
+<tr><td>GOBP_MAST_CELL_ACTIVATION</td><td>Mast cell activation</td><td>GO:BP</td><td>72</td><td>70</td><td>0</td><td>1</td><td>0</td><td>Y</td></tr>
+<tr><td>GOBP_REGULATORY_T_CELL_DIFFERENTIATION</td><td>Regulatory T cell differentiation</td><td>GO:BP</td><td>41</td><td>40</td><td>0</td><td>0</td><td>1</td><td>Y</td></tr>
+<tr><td>GOBP_MYELOID_DENDRITIC_CELL_ACTIVATION</td><td>Myeloid dendritic cell activation</td><td>GO:BP</td><td>29</td><td>29</td><td>0</td><td>0</td><td>0</td><td>N</td></tr>
+<tr><td>GOBP_NEUTROPHIL_DEGRANULATION</td><td>Neutrophil degranulation</td><td>GO:BP</td><td>14</td><td>14</td><td>0</td><td>0</td><td>0</td><td>N</td></tr>
+<tr><td>GOBP_MONOCYTE_ACTIVATION</td><td>Monocyte activation</td><td>GO:BP</td><td>12</td><td>12</td><td>0</td><td>0</td><td>0</td><td>N</td></tr>
+<tr><td>HALLMARK_INFLAMMATORY_RESPONSE</td><td>Inflammatory response</td><td>Hallmark</td><td>200</td><td>199</td><td>0</td><td>1</td><td>5</td><td>Y</td></tr>
+<tr><td>HALLMARK_INTERFERON_GAMMA_RESPONSE</td><td>Interferon gamma response</td><td>Hallmark</td><td>200</td><td>196</td><td>0</td><td>1</td><td>2</td><td>Y</td></tr>
+<tr><td>HALLMARK_ALLOGRAFT_REJECTION</td><td>Allograft rejection</td><td>Hallmark</td><td>200</td><td>195</td><td>0</td><td>2</td><td>11</td><td>Y</td></tr>
+</tbody></table>
+
+<h2>Table S4c. Immune checkpoint and effector transcript panel</h2>
+<div class='cap'>9 immune checkpoint genes and 10 effector genes, all detected in the expression matrix. Correlations for these transcripts are reported in Table 3 and Figure 2b.</div>
+<table>
+<thead><tr><th>panel</th><th>order_in_panel</th><th>gene_symbol</th><th>detected_in_expression_matrix</th></tr></thead>
+<tbody>
+<tr><td>Immune checkpoint</td><td>1</td><td>PDCD1</td><td>Y</td></tr>
+<tr><td>Immune checkpoint</td><td>2</td><td>CD274</td><td>Y</td></tr>
+<tr><td>Immune checkpoint</td><td>3</td><td>PDCD1LG2</td><td>Y</td></tr>
+<tr><td>Immune checkpoint</td><td>4</td><td>CTLA4</td><td>Y</td></tr>
+<tr><td>Immune checkpoint</td><td>5</td><td>LAG3</td><td>Y</td></tr>
+<tr><td>Immune checkpoint</td><td>6</td><td>HAVCR2</td><td>Y</td></tr>
+<tr><td>Immune checkpoint</td><td>7</td><td>TIGIT</td><td>Y</td></tr>
+<tr><td>Immune checkpoint</td><td>8</td><td>IDO1</td><td>Y</td></tr>
+<tr><td>Immune checkpoint</td><td>9</td><td>SIGLEC15</td><td>Y</td></tr>
+<tr><td>Immune effector</td><td>1</td><td>IFNG</td><td>Y</td></tr>
+<tr><td>Immune effector</td><td>2</td><td>GZMA</td><td>Y</td></tr>
+<tr><td>Immune effector</td><td>3</td><td>GZMB</td><td>Y</td></tr>
+<tr><td>Immune effector</td><td>4</td><td>PRF1</td><td>Y</td></tr>
+<tr><td>Immune effector</td><td>5</td><td>CXCL9</td><td>Y</td></tr>
+<tr><td>Immune effector</td><td>6</td><td>CXCL10</td><td>Y</td></tr>
+<tr><td>Immune effector</td><td>7</td><td>CXCL11</td><td>Y</td></tr>
+<tr><td>Immune effector</td><td>8</td><td>HLA-DRA</td><td>Y</td></tr>
+<tr><td>Immune effector</td><td>9</td><td>STAT1</td><td>Y</td></tr>
+<tr><td>Immune effector</td><td>10</td><td>CCR5</td><td>Y</td></tr>
+</tbody></table>
+
+<h2>Table S4d. MSigDB pathways used in the S1 feature scheme</h2>
+<div class='cap'>6 real MSigDB pathways (source release v2024.1.Hs) spanning 14–732 genes after intersecting with the expression matrix (1,325 unique gene-pathway memberships in total). This heterogeneity in set size is why pathway scores were standardised within the training set before LASSO-Cox.</div>
+<table>
+<thead><tr><th>pathway</th><th>collection</th><th>pathway_label</th><th>set_size_in_gmt</th><th>set_size_in_matrix</th></tr></thead>
+<tbody>
+<tr><td>GOBP_NEUTROPHIL_DEGRANULATION</td><td>GO:BP</td><td>Neutrophil degranulation</td><td>14</td><td>14</td></tr>
+<tr><td>GOBP_ACUTE_PHASE_RESPONSE</td><td>GO:BP</td><td>Acute phase response</td><td>47</td><td>47</td></tr>
+<tr><td>HALLMARK_COAGULATION</td><td>Hallmark</td><td>Coagulation</td><td>138</td><td>138</td></tr>
+<tr><td>HALLMARK_ALLOGRAFT_REJECTION</td><td>Hallmark</td><td>Allograft rejection</td><td>200</td><td>195</td></tr>
+<tr><td>HALLMARK_INFLAMMATORY_RESPONSE</td><td>Hallmark</td><td>Inflammatory response</td><td>200</td><td>199</td></tr>
+<tr><td>GOBP_ADAPTIVE_IMMUNE_RESPONSE</td><td>GO:BP</td><td>Adaptive immune response</td><td>756</td><td>732</td></tr>
+</tbody></table>
+
+<hr><h2>表格使用说明</h2><ul>
+<li>主表：Table 1（基线）、Table 2（轴 × 免疫特征）、Table 3（轴 × 检查点/效应基因）、Table 4（内部验证，阴性）、Table 5（营养轴分组差异，独立）。</li>
+<li>附表：S1 终点敏感性、S2 特征方案敏感性、S3 综合分分组（含循环论证警示）。</li>
+<li><b>重点叙事</b>：Table 5 是本方案唯一不含循环论证的关联结果；Table 4 如实报告预后模型无判别力。</li></ul></body></html>

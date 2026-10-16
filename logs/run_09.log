@@ -1,0 +1,74 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+
+========== 步骤 09 ==========
+[00_setup] 配置完成。基因集规模: nutrition_liver=16, neutrophil=16, lymphocyte=16
+[09] 分析样本：LUAD 500（事件 182）/ LUSC 491（事件 211）
+
+[09] 表格已写出 -> results/tables/
+[1] "Table1_baseline.csv"                       
+[2] "Table2_axis_immune_correlation.csv"        
+[3] "Table3_axis_checkpoint_correlation.csv"    
+[4] "Table4_internal_validation.csv"            
+[5] "Table5_immune_diff_by_nutrition_axis.csv"  
+[6] "Table5_immune_group_difference.csv"        
+[7] "TableS1_endpoint_sensitivity.csv"          
+[8] "TableS2_geneset_sensitivity.csv"           
+[9] "TableS3_immune_diff_by_composite_score.csv"
+
+[09] Table 1 预览：
+Key: <Characteristic>
+                               Characteristic                  LUAD
+                                       <char>                <char>
+ 1:                         Age, median (IQR)          66 (59\342\200\22372)
+ 2:                             Deaths, n (%)            182 (36.4)
+ 3: Follow-up of censored, median (IQR), days      670 (469\342\200\2231129)
+ 4:                               Male, n (%)            230 (46.0)
+ 5:               OS time, median (IQR), days      656 (423\342\200\2231127)
+ 6:                               Patients, n                   500
+ 7:               Stage early (I\342\200\223II), n (%)            388 (77.6)
+ 8:              Stage late (III\342\200\223IV), n (%)            104 (20.8)
+ 9:           Stage other/unclassified, n (%)               8 (1.6)
+10:                      Stage unknown, n (%)               0 (0.0)
+11:            lymphocyte score, median (IQR) 0.561 (0.482\342\200\2230.633)
+12:            neutrophil score, median (IQR) 0.329 (0.257\342\200\2230.403)
+13:       nutrition_liver score, median (IQR) 0.183 (0.108\342\200\2230.302)
+                     LUSC
+                   <char>
+ 1:          68 (62\342\200\22373)
+ 2:            211 (43.0)
+ 3:      749 (395\342\200\2231367)
+ 4:            364 (74.1)
+ 5:      660 (323\342\200\2231264)
+ 6:                   491
+ 7:            397 (80.9)
+ 8:             90 (18.3)
+ 9:               4 (0.8)
+10:               0 (0.0)
+11: 0.558 (0.474\342\200\2230.642)
+12: 0.326 (0.256\342\200\2230.391)
+13: 0.202 (0.116\342\200\2230.307)
+
+[09] Table 4 预览：
+                                                    Analysis
+                                                      <char>
+1:                         Single 7:3 split \342\200\224 training set
+2:                    Single 7:3 split \342\200\224 held-out test set
+3: Repeated 100 splits \342\200\224 test set, median [2.5th\342\200\22397.5th]
+4:                       Mean optimism (training \342\210\222 test C)
+                        Value
+                       <char>
+1:                      0.536
+2: 0.488 (log-rank P = 0.822)
+3:      0.501 [0.438\342\200\2230.560]
+4:                      0.031
+                                                             Note
+                                                           <char>
+1:                     Features selected within training set only
+2:             Selected by univariate Cox (P<0.10) then LASSO-Cox
+3:                     Same procedure re-run on 100 random splits
+4: Shows the degree of over-optimism in internally fitted C-index
+---- 步骤 09 完成，用时 2.9 秒 ----

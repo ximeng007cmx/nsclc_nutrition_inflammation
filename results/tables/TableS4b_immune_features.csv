@@ -1,0 +1,14 @@
+immune_feature,feature_label,collection,set_size_in_gmt,set_size_in_matrix,overlap_nutrition_liver,overlap_neutrophil,overlap_lymphocyte,shared_with_any_axis
+GOBP_T_CELL_ACTIVATION,T cell activation,GO:BP,579,566,0,1,10,Y
+GOBP_B_CELL_ACTIVATION,B cell activation,GO:BP,278,269,0,0,2,Y
+GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION,Antigen processing and presentation,GO:BP,118,113,0,0,2,Y
+GOBP_MACROPHAGE_ACTIVATION,Macrophage activation,GO:BP,112,109,0,0,0,N
+GOBP_NATURAL_KILLER_CELL_ACTIVATION,Natural killer cell activation,GO:BP,98,97,0,0,0,N
+GOBP_MAST_CELL_ACTIVATION,Mast cell activation,GO:BP,72,70,0,1,0,Y
+GOBP_REGULATORY_T_CELL_DIFFERENTIATION,Regulatory T cell differentiation,GO:BP,41,40,0,0,1,Y
+GOBP_MYELOID_DENDRITIC_CELL_ACTIVATION,Myeloid dendritic cell activation,GO:BP,29,29,0,0,0,N
+GOBP_NEUTROPHIL_DEGRANULATION,Neutrophil degranulation,GO:BP,14,14,0,0,0,N
+GOBP_MONOCYTE_ACTIVATION,Monocyte activation,GO:BP,12,12,0,0,0,N
+HALLMARK_INFLAMMATORY_RESPONSE,Inflammatory response,Hallmark,200,199,0,1,5,Y
+HALLMARK_INTERFERON_GAMMA_RESPONSE,Interferon gamma response,Hallmark,200,196,0,1,2,Y
+HALLMARK_ALLOGRAFT_REJECTION,Allograft rejection,Hallmark,200,195,0,2,11,Y

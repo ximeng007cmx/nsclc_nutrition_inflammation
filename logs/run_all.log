@@ -1,0 +1,44 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+
+========== 步骤 01 ==========
+[00_setup] 配置完成。基因集规模: nutrition_liver=16, neutrophil=16, lymphocyte=16
+[01] 读取表达矩阵 …
+     60498 基因 × 1120 样本（raw, ENSG 级）
+     原发肿瘤 1011 样本（LUAD+LUSC）
+[01] ENSG -> symbol …
+     检测到 Toil log2(FPKM+0.001) 编码，还原为 log2(FPKM+1)
+     58581 基因（symbol 级）
+     基因集 nutrition_liver 命中 16/16
+     基因集 neutrophil      命中 16/16
+     基因集 lymphocyte      命中 16/16
+[01] 临床表合并 …
+     LUAD 生存表 559 例（死亡 208）
+     LUSC 生存表 541 例（死亡 242）
+[01] 完成 -> work/pa_data.rds
+---- 步骤 01 完成，用时 35.7 秒 ----
+
+========== 步骤 02 ==========
+[00_setup] 配置完成。基因集规模: nutrition_liver=16, neutrophil=16, lymphocyte=16
+[02] ssGSEA：58581 基因 × 1011 样本，3 个基因集
+[02] 打分完成：
+ nutrition_liver     neutrophil         lymphocyte    
+ Min.   :-0.1253   Min.   :-0.06523   Min.   :0.1073  
+ 1st Qu.: 0.1120   1st Qu.: 0.25580   1st Qu.:0.4757  
+ Median : 0.1940   Median : 0.32668   Median :0.5597  
+ Mean   : 0.2314   Mean   : 0.32302   Mean   :0.5522  
+ 3rd Qu.: 0.3053   3rd Qu.: 0.39442   3rd Qu.:0.6366  
+ Max.   : 0.8747   Max.   : 0.71751   Max.   :0.8371  
+[02] 完成 -> work/pa_scores.rds
+---- 步骤 02 完成，用时 42.3 秒 ----
+
+========== 步骤 03 ==========
+[00_setup] 配置完成。基因集规模: nutrition_liver=16, neutrophil=16, lymphocyte=16
+[03] LUAD 训练表：500 例（事件 182）
+Error in `[.data.table`(df, , axes) : 
+  j (the 2nd argument inside [...]) is a single symbol but column name 'axes' is not found. If you intended to select columns using a variable in calling scope, please try DT[, ..axes]. The .. prefix conveys one-level-up similar to a file system path.
+Calls: source ... [ -> [.data.table -> stopf -> raise_condition -> signal
+Execution halted

@@ -1,0 +1,17 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+
+========== 步骤 08 ==========
+[00_setup] 配置完成。基因集规模: nutrition_liver=16, neutrophil=16, lymphocyte=16
+[08] LUAD 可用样本 500（事件 182）
+[08] 单次分割：训练 350（事件 134）/ 测试 150（事件 48）
+[08] 单次分割结果：
+              scheme n_train n_test   selected    coef c_train c_test p_test
+              <char>   <int>  <int>     <char>  <char>   <num>  <num>  <num>
+1: LUAD internal 7:3     350    150 lymphocyte -0.1323  0.5359  0.488  0.822
+[08] 重复 100 次分割：训练 C 中位 0.531 / 测试 C 中位 0.501 [0.438, 0.560]；平均过拟合差 0.031
+[08] 完成 -> results/internal_*.tsv + figures/fig6_internal_km.png
+---- 步骤 08 完成，用时 7.2 秒 ----

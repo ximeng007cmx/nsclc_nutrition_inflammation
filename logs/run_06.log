@@ -1,0 +1,52 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+
+========== 步骤 06 ==========
+[00_setup] 配置完成。基因集规模: nutrition_liver=16, neutrophil=16, lymphocyte=16
+[06] S1 通路规模: ALLOGRAFT_REJECTION=195, COAGULATION=138, INFLAMMATORY_RESPONSE=199, ACUTE_PHASE_RESPONSE=47, ADAPTIVE_IMMUNE_RESPONSE=732, NEUTROPHIL_DEGRANULATION=14
+  OS LUAD->LUSC S0_prior16   特征  3 选中 3  C_train=0.541  C_test=0.550  P_test=0.56
+  OS LUAD->LUSC S1_msigdb6   特征  6 选中 5  C_train=0.583  C_test=0.518  P_test=0.677
+  OS LUAD->LUSC S2_genes48   特征 48 选中47  C_train=0.659  C_test=0.516  P_test=0.728
+  OS LUSC->LUAD S0_prior16   特征  3 选中 1  C_train=0.544  C_test=0.525  P_test=0.797
+  OS LUSC->LUAD S1_msigdb6   特征  6 选中 6  C_train=0.531  C_test=0.514  P_test=0.799
+  OS LUSC->LUAD S2_genes48   特征 48 选中 1  C_train=0.557  C_test=0.477  P_test=0.869
+  PFI LUAD->LUSC S0_prior16   特征  3 选中 3  C_train=0.542  C_test=0.550  P_test=0.13
+  PFI LUAD->LUSC S1_msigdb6   特征  6 选中 3  C_train=0.541  C_test=0.534  P_test=0.268
+  PFI LUAD->LUSC S2_genes48   特征 48 选中 1  C_train=0.545  C_test=0.530  P_test=0.474
+  PFI LUSC->LUAD S0_prior16   特征  3 选中 3  C_train=0.561  C_test=0.522  P_test=0.781
+  PFI LUSC->LUAD S1_msigdb6   特征  6 选中 6  C_train=0.516  C_test=0.533  P_test=0.204
+  PFI LUSC->LUAD S2_genes48   特征 48 选中46  C_train=0.652  C_test=0.541  P_test=0.512
+
+[06] 完成 -> results/geneset_sensitivity.tsv
+    endpoint  train   test     scheme n_feature n_sel n_train n_test c_train
+      <char> <char> <char>     <char>     <int> <int>   <int>  <int>   <num>
+ 1:       OS   LUAD   LUSC S0_prior16         3     3     500    491  0.5406
+ 2:       OS   LUAD   LUSC S1_msigdb6         6     5     500    491  0.5834
+ 3:       OS   LUAD   LUSC S2_genes48        48    47     500    491  0.6587
+ 4:       OS   LUSC   LUAD S0_prior16         3     1     491    500  0.5443
+ 5:       OS   LUSC   LUAD S1_msigdb6         6     6     491    500  0.5311
+ 6:       OS   LUSC   LUAD S2_genes48        48     1     491    500  0.5574
+ 7:      PFI   LUAD   LUSC S0_prior16         3     3     500    491  0.5423
+ 8:      PFI   LUAD   LUSC S1_msigdb6         6     3     500    491  0.5408
+ 9:      PFI   LUAD   LUSC S2_genes48        48     1     500    491  0.5447
+10:      PFI   LUSC   LUAD S0_prior16         3     3     491    500  0.5610
+11:      PFI   LUSC   LUAD S1_msigdb6         6     6     491    500  0.5161
+12:      PFI   LUSC   LUAD S2_genes48        48    46     491    500  0.6516
+    c_test p_test     s_used
+     <num>  <num>     <char>
+ 1: 0.5504  0.560   0.000504
+ 2: 0.5183  0.677  0.0001619
+ 3: 0.5158  0.728  0.0002688
+ 4: 0.5253  0.797 lambda.min
+ 5: 0.5141  0.799  0.0002024
+ 6: 0.4775  0.869 lambda.min
+ 7: 0.5505  0.130 lambda.min
+ 8: 0.5338  0.268 lambda.min
+ 9: 0.5305  0.474 lambda.min
+10: 0.5216  0.781  0.0004298
+11: 0.5332  0.204  0.0001057
+12: 0.5412  0.512  0.0001519
+---- 步骤 06 完成，用时 40.3 秒 ----

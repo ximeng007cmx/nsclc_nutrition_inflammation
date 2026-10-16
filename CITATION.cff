@@ -1,0 +1,70 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite both the software and the associated manuscript."
+title: "Analysis code for: Nutrition–inflammation gene-expression axes associate with myeloid inflammatory activity but do not predict survival in non-small cell lung cancer: a TCGA transcriptomic analysis"
+type: software
+version: 1.0.0
+date-released: 2026-10-16
+license: MIT
+# doi:                    # concept DOI (all versions) — assigned by Zenodo on release; backfill here
+url: "https://github.com/ximeng007cmx/nsclc_nutrition_inflammation"
+repository-code: "https://github.com/ximeng007cmx/nsclc_nutrition_inflammation"
+abstract: >-
+  Analysis pipeline for a TCGA pan-cancer RNA-seq study of three a-priori
+  nutrition-inflammation gene-expression axes (16 genes each) in non-small cell
+  lung cancer. The pipeline performs stream subsetting of the UCSC Xena Toil
+  RSEM FPKM compendium, reversal of the stored log2(FPKM + 0.001) encoding,
+  Ensembl-to-symbol collapse, ssGSEA scoring, LASSO-Cox modelling in the
+  TCGA-LUAD training cohort, internal hold-out validation with repeated 7:3
+  splits, cross-histology generalisation to TCGA-LUSC, three pre-specified
+  sensitivity analyses (endpoint, feature scheme, training direction), and
+  analysis of the tumour immune microenvironment using pathway-level activity
+  proxies from real MSigDB C5 GO:BP and HALLMARK entries. The axes associate
+  with myeloid inflammatory activity but do not predict survival (internal
+  hold-out C-index 0.488); the prognostic result is reported as an honest
+  negative. All scripts are shipped unmodified except for one hard-coded project
+  root, which relocate.py rewrites on the user's machine.
+keywords:
+  - non-small cell lung cancer
+  - advanced lung cancer inflammation index
+  - nutritional status
+  - tumour immune microenvironment
+  - myeloid inflammation
+  - transcriptomic signature
+  - ssGSEA
+  - LASSO-Cox
+  - TCGA
+  - reproducibility
+authors:
+  - family-names: "Yang"
+    given-names: "Yuanjing"
+    affiliation: "Department of Science and Education, Yongchuan District People's Hospital of Chongqing"
+  - family-names: "Hu"
+    given-names: "Qi"
+    affiliation: "Department of Endocrinology, Yongchuan District People's Hospital of Chongqing"
+  - family-names: "Luo"
+    given-names: "Jianqiong"
+    affiliation: "Health Management Center, Yongchuan District People's Hospital of Chongqing"
+  - family-names: "Chen"
+    given-names: "Mingxiang"
+    affiliation: "Department of Hepatobiliary, Vascular and Hernia Surgery, Shapingba Hospital Affiliated to Chongqing University"
+    orcid: "https://orcid.org/0000-0002-0997-0957"
+contact:
+  - family-names: "Chen"
+    given-names: "Mingxiang"
+    affiliation: "Department of Hepatobiliary, Vascular and Hernia Surgery, Shapingba Hospital Affiliated to Chongqing University"
+
+preferred-citation:
+  type: article
+  title: "Nutrition–inflammation gene-expression axes associate with myeloid inflammatory activity but do not predict survival in non-small cell lung cancer: a TCGA transcriptomic analysis"
+  year: 2026
+  journal: "Discover Oncology"
+  authors:
+    - family-names: "Yang"
+      given-names: "Yuanjing"
+    - family-names: "Hu"
+      given-names: "Qi"
+    - family-names: "Luo"
+      given-names: "Jianqiong"
+    - family-names: "Chen"
+      given-names: "Mingxiang"
+  # status: submitted

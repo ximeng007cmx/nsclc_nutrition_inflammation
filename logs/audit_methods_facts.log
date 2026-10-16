@@ -1,0 +1,85 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+---- 1. 表达矩阵 ----
+genes = 58581 ; samples = 1011
+min(expr_log) = 0.0000 ; log2(0.001) = -9.9658
+sample type codes present = 
+
+---- 2. 生存表 ----
+LUAD n=559 events=208
+LUSC n=541 events=242
+LUAD age NA=10 gender NA=0 stage_late NA=9
+LUSC age NA=5 gender NA=0 stage_late NA=4
+LUAD stage_late 分布：
+
+early  late  <NA> 
+  431   119     9 
+LUSC stage_late 分布：
+
+early  late  <NA> 
+  441    96     4 
+
+---- 3. 三轴基因集 ----
+geneset sizes:  nutrition_liver=16, neutrophil=16, lymphocyte=16 
+missing genes :  nutrition_liver=0, neutrophil=0, lymphocyte=0 
+
+---- 4. 免疫特征（13 条）规模 ----
+immune features = 13 ; samples = 1011
+feature names:
+ [1] "GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION"
+ [2] "GOBP_B_CELL_ACTIVATION"                  
+ [3] "GOBP_MACROPHAGE_ACTIVATION"              
+ [4] "GOBP_MAST_CELL_ACTIVATION"               
+ [5] "GOBP_MONOCYTE_ACTIVATION"                
+ [6] "GOBP_MYELOID_DENDRITIC_CELL_ACTIVATION"  
+ [7] "GOBP_NATURAL_KILLER_CELL_ACTIVATION"     
+ [8] "GOBP_NEUTROPHIL_DEGRANULATION"           
+ [9] "GOBP_REGULATORY_T_CELL_DIFFERENTIATION"  
+[10] "GOBP_T_CELL_ACTIVATION"                  
+[11] "HALLMARK_ALLOGRAFT_REJECTION"            
+[12] "HALLMARK_INFLAMMATORY_RESPONSE"          
+[13] "HALLMARK_INTERFERON_GAMMA_RESPONSE"      
+
+---- 5. 相关性分析样本数与重叠分层 ----
+rows = 39 (3 axes x 13 features)
+              axis     n zero_overlap min_ov max_ov
+            <char> <int>        <int>  <int>  <int>
+1: nutrition_liver    13           13      0      0
+2:      neutrophil    13            8      0      2
+3:      lymphocyte    13            6      0     11
+
+---- 6. 检查点/效应基因 ----
+rows = 57 ; unique genes = 19
+              axis     n n_sig rho_min rho_max
+            <char> <int> <int>   <num>   <num>
+1: nutrition_liver    19     9  -0.026   0.156
+2:      neutrophil    19    19   0.157   0.454
+3:      lymphocyte    19    19   0.185   0.914
+
+---- 7. Table 5 分组（营养轴中位数二分）----
+features = 13 ; n_high = 505 ; n_low = 506
+all diff > 0 : TRUE ; all FDR < 0.05 : TRUE
+min P = 0e+00 ; n P underflowed to 0 = 1
+
+---- 8. 内部验证 ----
+              scheme n_train n_test   selected    coef c_train c_test p_test
+              <char>   <int>  <int>     <char>   <num>   <num>  <num>  <num>
+1: LUAD internal 7:3     350    150 lymphocyte -0.1323  0.5359  0.488  0.822
+repeats = 100 ; median C_test = 0.5014 ; n distinct selected = 0
+      med     lo     hi mean_C med_opt mean_opt
+    <num>  <num>  <num>  <num>   <num>    <num>
+1: 0.5014 0.4375 0.5599 0.4993  0.0287    0.031
+
+---- 9. 软硬件版本 ----
+R version 4.6.1 (2026-06-24 ucrt) 
+  data.table   1.18.6.1
+  glmnet       5.1
+  survival     3.8.6
+  GSVA         2.6.6
+  pheatmap     1.0.13
+  ggplot2      4.0.3
+
+审计完成（只读）。

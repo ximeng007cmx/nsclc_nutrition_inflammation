@@ -1,0 +1,27 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+  PASS: 基因数 = 60
+[selftest 1/5] ssGSEA 打分
+  PASS: ssGSEA 输出含 3 条轴
+  PASS: ssGSEA 每样本一行
+[selftest 2/5] LASSO-Cox 拟合
+  PASS: neutrophil 轴系数非零
+  PASS: 系数方向为正（植入信号方向）
+[selftest 3/5] C-index > 0.55
+  PASS: C-index = 0.583 > 0.55
+[selftest 4/5] bootstrap CI 覆盖估计值
+  PASS: C = 0.583 [0.505, 0.635]
+[selftest 5/5] log-rank 与多变量 Cox
+  PASS: log-rank P = 0.01464
+  PASS: 多变量 Cox 含 risk_score 项
+
+=== 自测全部通过 ===
+             term        HR        lo        hi          p
+           <char>     <num>     <num>     <num>      <num>
+1:     risk_score 9.2958962 1.3953562 61.929481 0.02120715
+2:            age 0.9961826 0.9768884  1.015858 0.70150931
+3:        genderM 1.0703442 0.7265746  1.576764 0.73089429
+4: stage_latelate        NA        NA        NA         NA

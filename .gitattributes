@@ -1,0 +1,5 @@
+# Byte fidelity is mandatory here: this repository ships CHECKSUMS.sha256 and verify_checksums.py.
+# Let git store and check out every file exactly as-is, with no end-of-line conversion on any
+# platform. Without this, a Windows checkout with core.autocrlf=true would silently rewrite line
+# endings and every text file would then fail its checksum.
+* -text

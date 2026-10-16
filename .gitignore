@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Local data (never commit — see DATA_SOURCES.md)
+data/
+raw/
+ref/
+
+# Generated at runtime
+work/
+logs/*.Rout
+*.rds
+
+# Release tooling
+release/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/

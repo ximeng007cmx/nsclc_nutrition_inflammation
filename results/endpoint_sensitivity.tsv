@@ -1,0 +1,7 @@
+endpoint	cohort	n	events	cindex	logrank_p	n_axis_sel	note
+OS	LUAD	500	182	0.5406	0.0996	3	strongest single axis P=0.353; s_used=0.000504
+OS	LUSC	491	211	0.5443	0.07	1	strongest single axis P=0.0462; s_used=lambda.min
+DSS	LUAD	465	112	0.5347	0.8711	3	strongest single axis P=0.223; s_used=0.0003842
+DSS	LUSC	439	86	0.5693	0.0031	1	strongest single axis P=0.0335; s_used=lambda.min
+PFI	LUAD	500	206	0.5423	0.0551	3	strongest single axis P=0.0379; s_used=lambda.min
+PFI	LUSC	491	143	0.561	0.0805	3	strongest single axis P=0.187; s_used=0.0004298

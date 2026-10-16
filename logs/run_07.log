@@ -1,0 +1,47 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+
+========== 步骤 07 ==========
+[00_setup] 配置完成。基因集规模: nutrition_liver=16, neutrophil=16, lymphocyte=16
+[07] 免疫特征 13 条；基因数范围 12–566
+[07] 检查点基因命中 9/9；效应分子命中 10/10
+[07] 免疫打分读缓存
+
+[07] 按「是否与免疫特征共享基因」分层的相关强度：
+              axis                    kind     n rho_median rho_max
+            <char>                  <char> <int>      <num>   <num>
+1:      lymphocyte \345\220\214\346\272\220(\346\234\211\345\237\272\345\233\240\351\207\215\345\217\240)     7      0.847   0.922
+2:      lymphocyte \347\213\254\347\253\213(\346\227\240\345\237\272\345\233\240\351\207\215\345\217\240)     6      0.647   0.865
+3:      neutrophil \345\220\214\346\272\220(\346\234\211\345\237\272\345\233\240\351\207\215\345\217\240)     5      0.598   0.629
+4:      neutrophil \347\213\254\347\253\213(\346\227\240\345\237\272\345\233\240\351\207\215\345\217\240)     8      0.522   0.611
+5: nutrition_liver \347\213\254\347\253\213(\346\227\240\345\237\272\345\233\240\351\207\215\345\217\240)    13      0.165   0.276
+
+[07] 三轴与免疫特征相关（|rho| 前 8）：
+         axis                           immune_feature   rho     p   fdr
+       <char>                                   <char> <num> <num> <num>
+1: lymphocyte             HALLMARK_ALLOGRAFT_REJECTION 0.922     0     0
+2: lymphocyte                   GOBP_T_CELL_ACTIVATION 0.905     0     0
+3: lymphocyte   GOBP_REGULATORY_T_CELL_DIFFERENTIATION 0.896     0     0
+4: lymphocyte      GOBP_NATURAL_KILLER_CELL_ACTIVATION 0.865     0     0
+5: lymphocyte                   GOBP_B_CELL_ACTIVATION 0.847     0     0
+6: lymphocyte   GOBP_MYELOID_DENDRITIC_CELL_ACTIVATION 0.840     0     0
+7: lymphocyte       HALLMARK_INTERFERON_GAMMA_RESPONSE 0.831     0     0
+8: lymphocyte GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION 0.812     0     0
+
+[07] 高低组免疫特征差异（P 前 8）：
+                             immune_feature   diff       p     fdr
+                                     <char>  <num>   <num>   <num>
+1:   GOBP_REGULATORY_T_CELL_DIFFERENTIATION -0.088 6.6e-52 8.6e-51
+2:             HALLMARK_ALLOGRAFT_REJECTION -0.095 4.0e-49 2.6e-48
+3:                   GOBP_T_CELL_ACTIVATION -0.056 3.6e-41 1.6e-40
+4:   GOBP_MYELOID_DENDRITIC_CELL_ACTIVATION -0.087 2.7e-39 8.6e-39
+5:       HALLMARK_INTERFERON_GAMMA_RESPONSE -0.069 8.8e-39 2.3e-38
+6:      GOBP_NATURAL_KILLER_CELL_ACTIVATION -0.069 2.7e-38 5.9e-38
+7:                   GOBP_B_CELL_ACTIVATION -0.046 1.7e-34 3.1e-34
+8: GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION -0.060 5.1e-34 8.3e-34
+[07] 完成 -> results/immune_axis_correlation.tsv 等 3 表 + fig5
+---- 步骤 07 完成，用时 4.4 秒 ----
+There were 12 warnings (use warnings() to see them)

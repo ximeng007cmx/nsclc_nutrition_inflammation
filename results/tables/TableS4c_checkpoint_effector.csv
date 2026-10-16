@@ -1,0 +1,20 @@
+panel,order_in_panel,gene_symbol,detected_in_expression_matrix
+Immune checkpoint,1,PDCD1,Y
+Immune checkpoint,2,CD274,Y
+Immune checkpoint,3,PDCD1LG2,Y
+Immune checkpoint,4,CTLA4,Y
+Immune checkpoint,5,LAG3,Y
+Immune checkpoint,6,HAVCR2,Y
+Immune checkpoint,7,TIGIT,Y
+Immune checkpoint,8,IDO1,Y
+Immune checkpoint,9,SIGLEC15,Y
+Immune effector,1,IFNG,Y
+Immune effector,2,GZMA,Y
+Immune effector,3,GZMB,Y
+Immune effector,4,PRF1,Y
+Immune effector,5,CXCL9,Y
+Immune effector,6,CXCL10,Y
+Immune effector,7,CXCL11,Y
+Immune effector,8,HLA-DRA,Y
+Immune effector,9,STAT1,Y
+Immune effector,10,CCR5,Y

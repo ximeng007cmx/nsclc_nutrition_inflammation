@@ -1,0 +1,24 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+
+========== 步骤 04 ==========
+[00_setup] 配置完成。基因集规模: nutrition_liver=16, neutrophil=16, lymphocyte=16
+`height` was translated to `width`.
+[04] 三级验证完成：
+                 cohort     n events    cindex     ci_lo     ci_hi  logrank_p
+                 <char> <int>  <int>     <num>     <num>     <num>      <num>
+1:    TCGA-LUAD (train)   500    182 0.5405744 0.4924592 0.5935446 0.09962834
+2: TCGA-LUSC (external)   491    211 0.5504119 0.5059021 0.5936305 0.56023908
+             term       HR        lo       hi            p
+           <fctr>    <num>     <num>    <num>        <num>
+1:     risk_score 1.904478 0.5170000 7.015540 3.328800e-01
+2:            age 1.009254 0.9941906 1.024546 2.299065e-01
+3:     genderMALE 1.034264 0.7677437 1.393305 8.246357e-01
+4: stage_latelate 2.447140 1.7851169 3.354680 2.688660e-08
+---- 步骤 04 完成，用时 9.8 秒 ----
+Warning message:
+`geom_errorbarh()` was deprecated in ggplot2 4.0.0.
+i Please use the `orientation` argument of `geom_errorbar()` instead. 

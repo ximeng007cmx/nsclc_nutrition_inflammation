@@ -1,0 +1,12 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+[00_setup] 配置完成。基因集规模: nutrition_liver=16, neutrophil=16, lymphocyte=16
+[S4a] 3 轴 × 16 基因 = 48 行；未检出 0 个
+[S4b] 13 条免疫特征；规模 12–566；与任意轴共享基因者 8 条
+[S4c] 检查点 9 + 效应 10 = 19 行；全部检出 = TRUE
+[S4d] 6 条通路；交集后规模 14–732
+
+[11] Table S4（a–d）已写入 D:/WorkBuddy_Y02/out_ali_directions/pathA/results/tables

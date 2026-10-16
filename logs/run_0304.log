@@ -1,0 +1,50 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+
+========== 步骤 03 ==========
+[00_setup] 配置完成。基因集规模: nutrition_liver=16, neutrophil=16, lymphocyte=16
+[03] LUAD 训练表：500 例（事件 182）
+[03] 单变量 Cox 诊断（三轴，LUAD OS）：
+              axis        HR        lo       hi         p
+            <char>     <num>     <num>    <num>     <num>
+1: nutrition_liver 0.9357337 0.8134233 1.076435 0.3526825
+2:      neutrophil 1.0158918 0.8814250 1.170872 0.8277018
+3:      lymphocyte 0.9354371 0.8078457 1.083180 0.3723741
+[03] LASSO-Cox（10 折 CV）…
+[03][注意] lambda.min 全零，回退 lambda = 0.000504（结果文件已标注）
+nutrition_liver      neutrophil      lymphocyte 
+        -0.0685          0.0742         -0.0950 
+[03] 完成。风险分中位数（训练集切点）= 0.0100
+---- 步骤 03 完成，用时 3.5 秒 ----
+
+========== 步骤 04 ==========
+[00_setup] 配置完成。基因集规模: nutrition_liver=16, neutrophil=16, lymphocyte=16
+`height` was translated to `width`.
+[04] 三级验证完成：
+                 cohort     n events    cindex     ci_lo     ci_hi  logrank_p
+                 <char> <int>  <int>     <num>     <num>     <num>      <num>
+1:    TCGA-LUAD (train)   500    182 0.5405744 0.4924592 0.5935446 0.09962834
+2: TCGA-LUSC (external)   491    211 0.5504119 0.5059021 0.5936305 0.56023908
+             term       HR        lo       hi            p
+           <fctr>    <num>     <num>    <num>        <num>
+1:     risk_score 1.904478 0.5170000 7.015540 3.328800e-01
+2:            age 1.009254 0.9941906 1.024546 2.299065e-01
+3:     genderMALE 1.034264 0.7677437 1.393305 8.246357e-01
+4: stage_latelate 2.447140 1.7851169 3.354680 2.688660e-08
+---- 步骤 04 完成，用时 8.1 秒 ----
+Warning messages:
+1: In fit_lasso_cox(tr_z, tr$time, tr$status, nfolds = PARS$lasso_nfolds,  :
+  lambda.min 系数全零（信号弱），回退 lambda=0.000504
+2: No shared levels found between `names(values)` of the manual scale and the
+data's colour values. 
+3: No shared levels found between `names(values)` of the manual scale and the
+data's colour values. 
+4: No shared levels found between `names(values)` of the manual scale and the
+data's colour values. 
+5: No shared levels found between `names(values)` of the manual scale and the
+data's colour values. 
+6: `geom_errorbarh()` was deprecated in ggplot2 4.0.0.
+i Please use the `orientation` argument of `geom_errorbar()` instead. 

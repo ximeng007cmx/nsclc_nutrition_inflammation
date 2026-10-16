@@ -1,0 +1,21 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+[00_setup] 配置完成。基因集规模: nutrition_liver=16, neutrophil=16, lymphocyte=16
+
+===== 全样本（n=500）单变量 P =====
+nutrition_liver      neutrophil      lymphocyte 
+         0.3527          0.8277          0.3724 
+
+===== 100 次 70% 子样本：每轴 P 的分位数 =====
+  nutrition_liver  min=0.0552 q25=0.2499 median=0.4209 q75=0.7083 max=0.9121  |  P<=0.10 占比=8%
+  neutrophil       min=0.2014 q25=0.5611 median=0.7593 q75=0.8564 max=0.9872  |  P<=0.10 占比=0%
+  lymphocyte       min=0.0195 q25=0.2512 median=0.4794 q75=0.6507 max=0.9800  |  P<=0.10 占比=3%
+
+  每次「至少一个轴 P<=0.10」的占比 = 11%
+  每次「通过初筛的轴数」分布：
+
+ 0  1 
+89 11 

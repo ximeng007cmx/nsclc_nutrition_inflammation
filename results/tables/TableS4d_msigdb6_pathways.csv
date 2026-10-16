@@ -1,0 +1,7 @@
+pathway,collection,pathway_label,set_size_in_gmt,set_size_in_matrix
+GOBP_NEUTROPHIL_DEGRANULATION,GO:BP,Neutrophil degranulation,14,14
+GOBP_ACUTE_PHASE_RESPONSE,GO:BP,Acute phase response,47,47
+HALLMARK_COAGULATION,Hallmark,Coagulation,138,138
+HALLMARK_ALLOGRAFT_REJECTION,Hallmark,Allograft rejection,200,195
+HALLMARK_INFLAMMATORY_RESPONSE,Hallmark,Inflammatory response,200,199
+GOBP_ADAPTIVE_IMMUNE_RESPONSE,GO:BP,Adaptive immune response,756,732
