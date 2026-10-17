@@ -1,2 +1,2 @@
 scheme	n_train	n_test	selected	coef	c_train	c_test	p_test
-LUAD internal 7:3	350	150	lymphocyte	-0.1323	0.5359	0.488	0.822
+LUAD internal 7:3	350	150	nutrition_liver+lymphocyte	0.1535+-0.1852	0.587	0.494	0.888

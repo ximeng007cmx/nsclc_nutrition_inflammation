@@ -101,19 +101,19 @@ Spearman correlations with single-gene expression (log2(FPKM+1)). Checkpoint pan
 | TIGIT | Immune checkpoint | 0.057 | 0.406 | 0.899 | 0.071 | 2.6e-41 | <1e-300 |
 
 
-## Table 4. Internal validation of the prognostic score (negative result)
+## Table 5. Internal validation of the prognostic score (negative result)
 
 LUAD split 7:3 at RANDOM (sample.int(); NOT stratified by event status — observed event rates 38.3% training vs 32.0% held-out, against 36.4% expected under stratification); feature selection (univariate Cox P<0.10) and standardisation performed within the training set only. The held-out C-index is at chance level, indicating the three a-priori axes carry no prognostic discrimination in LUAD; the previously reported C-index of 0.541 was an over-optimistic value from fitting on the full dataset.
 
 | Analysis | Value | Note |
 |---|---|---|
 | Single 7:3 split — training set | 0.536 | Features selected within training set only |
-| Single 7:3 split — held-out test set | 0.488 (log-rank P = 0.822) | Selected by univariate Cox (P<0.10) then LASSO-Cox |
+| Single 7:3 split — held-out test set | 0.488 (log-rank P = 0.822) | No axis reached P<0.10; fallback rule used (smallest-P axis carried forward, univariate coefficient applied, no LASSO step) |
 | Repeated 100 splits — test set, median [2.5th–97.5th] | 0.501 [0.438–0.560] | Same procedure re-run on 100 random splits |
 | Mean optimism (training − test C) | 0.031 | Shows the degree of over-optimism in internally fitted C-index |
 
 
-## Table 5. Immune features by nutrition-axis group (independent of definitional overlap)
+## Table 4. Immune features by nutrition-axis group (independent of definitional overlap)
 
 Samples dichotomised at the median of the nutrition_liver axis, which shares NO genes with any immune feature. Higher nutrition-axis expression is associated with higher activity of myeloid/monocyte/macrophage and inflammatory pathways. Wilcoxon rank-sum test; FDR = Benjamini–Hochberg.
 
@@ -170,7 +170,7 @@ S0 = three a-priori axes (16 genes each); S1 = six MSigDB pathways (1,325 genes)
 
 ## Table S3. Immune features by composite risk score (definitional consistency check)
 
-CAUTION: the composite score contains the lymphocyte axis with a negative coefficient, so lower immune activity in the high-score group is partly definitional. This table is provided for completeness only; Table 5 is the non-circular analysis.
+CAUTION: the composite score contains the lymphocyte axis with a negative coefficient, so lower immune activity in the high-score group is partly definitional. This table is provided for completeness only; Table 4 is the non-circular analysis.
 
 | immune_feature | Median (high score) | Median (low score) | Difference | P | FDR |
 |---|---|---|---|---|---|
@@ -311,6 +311,6 @@ CAUTION: the composite score contains the lymphocyte axis with a negative coeffi
 
 ## 表格使用说明
 
-- 主表：Table 1（基线）、Table 2（轴 × 免疫特征）、Table 3（轴 × 检查点/效应基因）、Table 4（内部验证，阴性）、Table 5（营养轴分组差异，独立）。
+- 主表：Table 1（基线）、Table 2（轴 × 免疫特征）、Table 3（轴 × 检查点/效应基因）、Table 4（营养轴分组差异，独立）、Table 5（内部验证，阴性）。
 - 附表：S1 终点敏感性、S2 特征方案敏感性、S3 综合分分组（含循环论证警示）。
-- **重点叙事**：Table 5 是本方案唯一不含循环论证的关联结果——营养轴与全部免疫特征零基因重叠，却与髓系/炎症通路活性系统性正相关；Table 4 如实报告预后模型无判别力。
+- **重点叙事**：Table 4 是本方案唯一不含循环论证的关联结果——营养轴与全部免疫特征零基因重叠，却与髓系/炎症通路活性系统性正相关；Table 5 如实报告预后模型无判别力。

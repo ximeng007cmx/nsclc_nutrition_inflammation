@@ -1,7 +1,7 @@
 Endpoint,Cohort,n,Events,C-index,P,Axes selected,Note
-OS,LUAD,500,182,0.541,0.100,3,strongest single axis P=0.353; s_used=0.000504
-OS,LUSC,491,211,0.544,0.070,1,strongest single axis P=0.0462; s_used=lambda.min
-DSS,LUAD,465,112,0.535,0.871,3,strongest single axis P=0.223; s_used=0.0003842
-DSS,LUSC,439,86,0.569,0.003,1,strongest single axis P=0.0335; s_used=lambda.min
-PFI,LUAD,500,206,0.542,0.055,3,strongest single axis P=0.0379; s_used=lambda.min
-PFI,LUSC,491,143,0.561,0.080,3,strongest single axis P=0.187; s_used=0.0004298
+OS,LUAD,500,182,0.554,0.022,1,strongest single axis P=0.0251; s_used=lambda.min
+OS,LUSC,491,211,0.570,0.014,2,strongest single axis P=0.00602; s_used=lambda.min
+DSS,LUAD,465,112,0.560,0.112,1,strongest single axis P=0.0328; s_used=lambda.min
+DSS,LUSC,439,86,0.563,0.262,3,strongest single axis P=0.184; s_used=0.0005236
+PFI,LUAD,500,206,0.545,0.446,3,strongest single axis P=0.0717; s_used=0.0007634
+PFI,LUSC,491,143,0.558,0.057,3,strongest single axis P=0.0532; s_used=lambda.min

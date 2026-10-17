@@ -1,0 +1,7 @@
+step	description	n	luad	lusc	source
+1	Target samples retrieved for TCGA-LUAD and TCGA-LUSC (sample types 01 and 11)	1617	859	758	data/tcga_sample_barcodes.tsv
+2	Target samples present in the Toil expression matrix (absent = added after reprocessing)	1120	572	548	data/tcga_RSEM_gene_fpkm.gz (header)
+3	Target samples absent from the matrix	497	287	210	derived from steps 1-2
+4	Primary tumours (sample type 01) used for expression analyses	1011	513	498	derived from steps 2 + barcode suffix
+5	Primary tumours with non-missing OS in the TCGA-CDR (survival cohort)	991	500	491	data/tcga_cdr_clinical.csv
+6	Primary tumours excluded for missing OS (step 4 minus step 5)	20	13	7	derived from steps 4-5

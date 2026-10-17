@@ -1,0 +1,107 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+[00_setup] 配置完成。基因集规模: nutrition_liver=16, neutrophil=16, lymphocyte=16
+[12] 随机面板抽样数 K = 1000；seed = 20260101
+[12] 免疫特征 13 条；样本 1011
+[12] 抽样池 51783 基因（剔除轴基因 48 个后）
+[12] 待打分基因集 6003 个（含 3 条真轴）
+[12] ssGSEA 完成，用时 1.8 分钟
+[12] QC 真轴复算 Spearman（应≈1）: nutrition_liver=1.0000, neutrophil=1.0000, lymphocyte=1.0000
+[12] 相关矩阵 6003 面板 × 13 特征（n=1011）
+[12] 队列：LUAD 500 例（事件 182）；LUSC 491 例（事件 211）
+[12] 生存指标完成（1.4 分钟）：LUAD n=500（事件 182）；LUSC n=491（事件 211）
+[12] 中间结果已缓存：pa_random_panels_K1000_seed20260101.rds
+
+[12] A. 随机面板对照汇总：
+               axis     null_type             metric   obs null_mean
+             <char>        <char>             <char> <num>     <num>
+ 1: nutrition_liver  expr_matched    immune_rho_mean 0.215     0.011
+ 2: nutrition_liver  expr_matched immune_rho_absmean 0.215     0.132
+ 3: nutrition_liver  expr_matched  immune_rho_absmax 0.362     0.196
+ 4: nutrition_liver  expr_matched     os_Cindex_luad 0.535     0.491
+ 5: nutrition_liver unconstrained    immune_rho_mean 0.215    -0.002
+ 6: nutrition_liver unconstrained immune_rho_absmean 0.215     0.121
+ 7: nutrition_liver unconstrained  immune_rho_absmax 0.362     0.179
+ 8: nutrition_liver unconstrained     os_Cindex_luad 0.535     0.495
+ 9:      neutrophil  expr_matched    immune_rho_mean 0.480     0.013
+10:      neutrophil  expr_matched immune_rho_absmean 0.480     0.126
+11:      neutrophil  expr_matched  immune_rho_absmax 0.613     0.190
+12:      neutrophil  expr_matched     os_Cindex_luad 0.470     0.492
+13:      neutrophil unconstrained    immune_rho_mean 0.480     0.005
+14:      neutrophil unconstrained immune_rho_absmean 0.480     0.121
+15:      neutrophil unconstrained  immune_rho_absmax 0.613     0.177
+16:      neutrophil unconstrained     os_Cindex_luad 0.470     0.493
+17:      lymphocyte  expr_matched    immune_rho_mean 0.741     0.077
+18:      lymphocyte  expr_matched immune_rho_absmean 0.741     0.208
+19:      lymphocyte  expr_matched  immune_rho_absmax 0.897     0.297
+20:      lymphocyte  expr_matched     os_Cindex_luad 0.445     0.504
+21:      lymphocyte unconstrained    immune_rho_mean 0.741    -0.002
+22:      lymphocyte unconstrained immune_rho_absmean 0.741     0.116
+23:      lymphocyte unconstrained  immune_rho_absmax 0.897     0.172
+24:      lymphocyte unconstrained     os_Cindex_luad 0.445     0.493
+               axis     null_type             metric   obs null_mean
+             <char>        <char>             <char> <num>     <num>
+         null_95     z    p_emp
+          <char> <num>    <num>
+ 1: -0.267-0.325  1.30 0.112000
+ 2:  0.025-0.340  0.94 0.180000
+ 3:  0.058-0.416  1.70 0.063900
+ 4:  0.426-0.559  1.31 0.083900
+ 5: -0.246-0.311  1.48 0.078900
+ 6:  0.022-0.320  1.12 0.145000
+ 7:  0.052-0.392  2.00 0.049000
+ 8:  0.434-0.558  1.24 0.109000
+ 9: -0.268-0.324  3.10 0.000999
+10:  0.024-0.333  4.19 0.000999
+11:  0.056-0.397  4.54 0.000999
+12:  0.433-0.559 -0.68 0.742000
+13: -0.246-0.304  3.26 0.000999
+14:  0.021-0.316  4.32 0.000999
+15:  0.053-0.385  4.81 0.000999
+16:  0.429-0.562 -0.69 0.757000
+17: -0.357-0.512  2.84 0.000999
+18:  0.040-0.512  3.96 0.000999
+19:  0.091-0.613  4.22 0.000999
+20:  0.421-0.595 -1.30 0.902000
+21: -0.254-0.304  5.30 0.000999
+22:  0.023-0.310  7.83 0.000999
+23:  0.053-0.377  8.24 0.000999
+24:  0.431-0.562 -1.45 0.935000
+         null_95     z    p_emp
+          <char> <num>    <num>
+
+[12] B. ESTIMATE 匹配：LUAD 499/500，LUSC 491/491
+
+[12] 轴 × ESTIMATE（Spearman）：
+              axis score_type   rho       p
+            <char>     <char> <num>   <num>
+1: nutrition_liver    Stromal 0.164 1.5e-07
+2: nutrition_liver     Immune 0.214 7.0e-12
+3: nutrition_liver   ESTIMATE 0.205 5.6e-11
+4:      neutrophil    Stromal 0.446 1.3e-50
+5:      neutrophil     Immune 0.457 0.0e+00
+6:      neutrophil   ESTIMATE 0.480 0.0e+00
+7:      lymphocyte    Stromal 0.569 1.1e-87
+8:      lymphocyte     Immune 0.847 0.0e+00
+9:      lymphocyte   ESTIMATE 0.765 0.0e+00
+
+[12] raw vs 纯度校正（按是否共享基因分层）：
+              axis                          kind n_pairs   raw adj_purity delta
+            <char>                        <char>   <int> <num>      <num> <num>
+1: nutrition_liver independent (no shared genes)      13 0.207      0.057 0.149
+2:      neutrophil independent (no shared genes)       8 0.485      0.170 0.304
+3:      neutrophil     homologous (shared genes)       5 0.489      0.146 0.343
+4:      lymphocyte     homologous (shared genes)       7 0.847      0.569 0.278
+5:      lymphocyte independent (no shared genes)       6 0.645     -0.035 0.651
+   adj_est adj_str sig_raw sig_adj
+     <num>   <num>   <int>   <int>
+1:   0.055   0.129      13       7
+2:   0.169   0.270       8       6
+3:   0.145   0.259       5       3
+4:   0.568   0.771       7       6
+5:  -0.036   0.403       6       5
+
+[12] 完成 -> results/random_panel_*.tsv、estimate_*.tsv；figures/_intermediate/figS_*.png

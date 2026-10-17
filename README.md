@@ -1,6 +1,6 @@
 # Analysis code — Nutrition–inflammation gene-expression axes associate with myeloid inflammatory activity but do not predict survival in non-small cell lung cancer
 
-Version **v1.0.0** ｜ Date **2026-10-16**
+Version **v1.1.0** ｜ Date **2026-10-18**
 
 Analysis code accompanying the manuscript:
 
@@ -8,7 +8,8 @@ Analysis code accompanying the manuscript:
 
 This repository contains the **complete analysis pipeline** (data assembly → ssGSEA axis scoring → LASSO-Cox
 modelling → internal and cross-histology validation → endpoint, feature-scheme and training-direction
-sensitivity analyses → immune-microenvironment analysis → article-level tables and figures), together with
+sensitivity analyses → random-panel null calibration and ESTIMATE purity adjustment →
+immune-microenvironment analysis → article-level tables and figures), together with
 the **derived result tables** on which every reported number is based.
 
 ---
@@ -26,8 +27,14 @@ the **derived result tables** on which every reported number is based.
 - **Headline findings** (all reproducible from `results/`):
   - The axes **do** associate with myeloid inflammatory activity (pathway-level proxies from real GO:BP and
     HALLMARK entries — explicitly **not** a deconvolution estimate).
-  - They **do not** predict survival: internal hold-out C-index **0.488** (single 7:3 split, n_test = 150) and
-    a 100-split median test C-index of ≈0.50; cross-histology external C-index ≈0.54–0.57 across OS / DSS / PFI.
+  - They **do not** predict survival: internal hold-out C-index **0.494** (log-rank P = 0.888; single 7:3 split,
+    n_test = 150) and a 100-split median test C-index of **0.542** (2.5th–97.5th percentile 0.456–0.600);
+    cross-histology external C-index 0.501 (LUAD-fitted model applied to LUSC).
+  - **Random-panel calibration**: the lymphocyte and neutrophil axes exceed 1,000 expression-matched random
+    16-gene panels (empirical P = 0.001), whereas the nutrition axis lies within the null (P = 0.18).
+  - **Purity adjustment**: partialling out the ESTIMATE tumour-purity estimate dissolves the lymphocyte-axis
+    correlations with unrelated myeloid programmes (median rho 0.645 → −0.035) but leaves the nutrition-axis
+    myeloid associations intact (median 0.207 → 0.057, 7 of 13 still FDR-significant).
   - The prognostic result is reported as an **honest negative**, not as a rescued model.
 - **Design principles**: a-priori signatures; feature selection and scaling performed **inside** the training
   set only; sensitivity analyses for the endpoint (OS / DSS / PFI), the feature scheme (3 prior axes vs. 6 real
@@ -46,21 +53,21 @@ the **derived result tables** on which every reported number is based.
 ├── verify_checksums.py             checks the tree against CHECKSUMS.sha256
 ├── requirements.txt                R and Python environment
 ├── relocate.py                     rewrite the hard-coded project root (see §5)
-├── run_all_pathA.R                 master entry point (steps 01–11, 99)
+├── run_all_pathA.R                 master entry point (steps 01–13, 99)
 ├── LICENSE                         MIT
 ├── CITATION.cff                    citation metadata (Citation File Format 1.2.0)
 ├── .zenodo.json                    Zenodo deposition metadata for the archived release
 ├── R/                              the analysis steps
 │   ├── 00_setup_pathA.R            configuration: paths, parameters, the three a-priori signatures
 │   ├── pathA_core.R                shared function library (Toil handling, ssGSEA, LASSO-Cox, evaluation)
-│   ├── 01_load.R … 11_tableS4.R    steps 01–11
+│   ├── 01_load.R … 13_figures_random_estimate.R   steps 01–13 (12–13 need the ESTIMATE scores, §4)
 │   └── 99_selftest.R               synthetic end-to-end self-test (no TCGA data needed)
 ├── tools/                          downstream tools (Python + a few R audit scripts)
 ├── results/                        derived result tables cited in the manuscript
 │   ├── tables/                     article-level Tables 1–5 and S1–S4
 │   ├── figure_data/                the exact numbers behind Figure 4
 │   └── refs_gapfill/               Europe PMC literature gap-fill records (manuscript auxiliary)
-├── figures/                        Figures 1–5 (PNG + PDF)
+├── figures/                        Figures 1–7 (PNG + PDF)
 │   └── supplementary/              Supplementary Figures S1–S4 (PNG + PDF)
 ├── logs/                           run logs + logs/sessionInfo.txt (full resolved R session)
 └── assets/
@@ -110,14 +117,18 @@ python relocate.py .
 #      data/tcga_sample_barcodes.tsv
 #      data/genesets/h.all.symbols.gmt
 #      data/genesets/c5.go.bp.symbols.gmt
+#      data/external/estimate/ESTIMATE_scores.txt          (only needed for steps 12–13;
+#      data/external/estimate/lung_*_RNAseqV2.txt           see DATA_SOURCES.md §6)
 #      assets/_gencode_probemap.gz            (already shipped here)
 
 # 2) subset the pan-cancer matrix to LUAD/LUSC
 python tools/subset_toil.py data/tcga_RSEM_gene_fpkm.gz data/tcga_sample_barcodes.tsv \
     work/expr_luad_lusc.tsv --project TCGA-LUAD,TCGA-LUSC --suffix 01
 
-# 3) run the pipeline (steps 01 -> 11)
-Rscript run_all_pathA.R
+# 3) run the pipeline (steps 01 -> 11; add 12 13 for the random-panel and purity analyses,
+#    which run only if data/external/estimate/ESTIMATE_scores.txt is present)
+Rscript run_all_pathA.R 01 02 03 04 05 06 07 08 09 10 11
+Rscript run_all_pathA.R 12 13   # robustness modules (~20 min for step 12)
 
 # 4) Figure 1 + the combined article-table document
 python tools/make_fig1_workflow.py

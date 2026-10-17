@@ -1,5 +1,0 @@
-Analysis,Value,Note
-Single 7:3 split — training set,0.536,Features selected within training set only
-Single 7:3 split — held-out test set,0.488 (log-rank P = 0.822),Selected by univariate Cox (P<0.10) then LASSO-Cox
-"Repeated 100 splits — test set, median [2.5th–97.5th]",0.501 [0.438–0.560],Same procedure re-run on 100 random splits
-Mean optimism (training − test C),0.031,Shows the degree of over-optimism in internally fitted C-index

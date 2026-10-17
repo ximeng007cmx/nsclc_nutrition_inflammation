@@ -1,0 +1,256 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+
+========== 步骤 01 ==========
+[00_setup] 配置完成。基因集规模: nutrition_liver=16, neutrophil=16, lymphocyte=16
+[01] 读取表达矩阵 …
+     60498 基因 × 1120 样本（raw, ENSG 级）
+     原发肿瘤 1011 样本（LUAD+LUSC）
+[01] ENSG -> symbol …
+     检测到 Toil log2(FPKM+0.001) 编码，还原为 log2(FPKM+1)
+     58581 基因（symbol 级）
+     基因集 nutrition_liver 命中 16/16
+     基因集 neutrophil      命中 16/16
+     基因集 lymphocyte      命中 16/16
+[01] 临床表合并 …
+     LUAD 生存表 559 例（死亡 208）
+     LUSC 生存表 541 例（死亡 242）
+[01] 完成 -> work/pa_data.rds
+---- 步骤 01 完成，用时 45.3 秒 ----
+
+========== 步骤 02 ==========
+[00_setup] 配置完成。基因集规模: nutrition_liver=16, neutrophil=16, lymphocyte=16
+[02] ssGSEA：58581 基因 × 1011 样本，3 个基因集
+[02] 打分完成：
+ nutrition_liver     neutrophil       lymphocyte    
+ Min.   :-0.1088   Min.   :0.1387   Min.   :0.2908  
+ 1st Qu.: 0.2552   1st Qu.:0.3679   1st Qu.:0.6111  
+ Median : 0.3318   Median :0.4275   Median :0.6771  
+ Mean   : 0.3258   Mean   :0.4216   Mean   :0.6745  
+ 3rd Qu.: 0.3936   3rd Qu.:0.4751   3rd Qu.:0.7412  
+ Max.   : 0.8912   Max.   :0.6125   Max.   :0.8779  
+[02] 完成 -> work/pa_scores.rds
+---- 步骤 02 完成，用时 52.6 秒 ----
+
+========== 步骤 03 ==========
+[00_setup] 配置完成。基因集规模: nutrition_liver=16, neutrophil=16, lymphocyte=16
+[03] LUAD 训练表：500 例（事件 182）
+[03] 单变量 Cox 诊断（三轴，LUAD OS）：
+              axis        HR        lo        hi          p
+            <char>     <num>     <num>     <num>      <num>
+1: nutrition_liver 1.0903821 0.9326491 1.2747915 0.27776252
+2:      neutrophil 0.9625161 0.8346218 1.1100085 0.59944191
+3:      lymphocyte 0.8430259 0.7260298 0.9788754 0.02508755
+[03] LASSO-Cox（10 折 CV）…
+nutrition_liver      neutrophil      lymphocyte 
+         0.0000          0.0000         -0.0529 
+[03] 完成。风险分中位数（训练集切点）= -0.0004
+---- 步骤 03 完成，用时 3.7 秒 ----
+
+========== 步骤 04 ==========
+[00_setup] 配置完成。基因集规模: nutrition_liver=16, neutrophil=16, lymphocyte=16
+`height` was translated to `width`.
+`height` was translated to `width`.
+[04] 三级验证完成：
+                 cohort     n events    cindex     ci_lo     ci_hi logrank_p
+                 <char> <int>  <int>     <num>     <num>     <num>     <num>
+1:    TCGA-LUAD (train)   500    182 0.5545436 0.5074224 0.6058254 0.0217744
+2: TCGA-LUSC (external)   491    211 0.5006400 0.4546770 0.5427687 0.7513564
+             term        HR        lo         hi            p
+           <fctr>     <num>     <num>      <num>        <num>
+1:     risk_score 15.568172 0.8723334 277.838706 6.189161e-02
+2:            age  1.009846 0.9946959   1.025227 2.039421e-01
+3:     genderMALE  1.015383 0.7531549   1.368911 9.202246e-01
+4: stage_latelate  2.397195 1.7485543   3.286455 5.597910e-08
+---- 步骤 04 完成，用时 16.6 秒 ----
+
+========== 步骤 05 ==========
+[00_setup] 配置完成。基因集规模: nutrition_liver=16, neutrophil=16, lymphocyte=16
+[05] 终点敏感性结果：
+   endpoint cohort     n events cindex logrank_p n_axis_sel
+     <char> <char> <int>  <int>  <num>     <num>      <int>
+1:       OS   LUAD   500    182 0.5545    0.0218          1
+2:       OS   LUSC   491    211 0.5698    0.0144          2
+3:      DSS   LUAD   465    112 0.5601    0.1119          1
+4:      DSS   LUSC   439     86 0.5628    0.2622          3
+5:      PFI   LUAD   500    206 0.5450    0.4457          3
+6:      PFI   LUSC   491    143 0.5584    0.0569          3
+                                                 note
+                                               <char>
+1:  strongest single axis P=0.0251; s_used=lambda.min
+2: strongest single axis P=0.00602; s_used=lambda.min
+3:  strongest single axis P=0.0328; s_used=lambda.min
+4:    strongest single axis P=0.184; s_used=0.0005236
+5:   strongest single axis P=0.0717; s_used=0.0007634
+6:  strongest single axis P=0.0532; s_used=lambda.min
+---- 步骤 05 完成，用时 4.9 秒 ----
+
+========== 步骤 06 ==========
+[00_setup] 配置完成。基因集规模: nutrition_liver=16, neutrophil=16, lymphocyte=16
+[06] S1 通路规模: ALLOGRAFT_REJECTION=195, COAGULATION=138, INFLAMMATORY_RESPONSE=199, ACUTE_PHASE_RESPONSE=47, ADAPTIVE_IMMUNE_RESPONSE=732, NEUTROPHIL_DEGRANULATION=14
+[06] S1 打分读缓存
+  OS LUAD->LUSC S0_prior16   特征  3 选中 1  C_train=0.554  C_test=0.501  P_test=0.751
+  OS LUAD->LUSC S1_msigdb6   特征  6 选中 5  C_train=0.583  C_test=0.518  P_test=0.677
+  OS LUAD->LUSC S2_genes48   特征 48 选中19  C_train=0.681  C_test=0.482  P_test=0.472
+  OS LUSC->LUAD S0_prior16   特征  3 选中 3  C_train=0.575  C_test=0.530  P_test=0.974
+  OS LUSC->LUAD S1_msigdb6   特征  6 选中 6  C_train=0.531  C_test=0.514  P_test=0.799
+  OS LUSC->LUAD S2_genes48   特征 48 选中 2  C_train=0.586  C_test=0.541  P_test=0.335
+  PFI LUAD->LUSC S0_prior16   特征  3 选中 1  C_train=0.551  C_test=0.538  P_test=0.765
+  PFI LUAD->LUSC S1_msigdb6   特征  6 选中 3  C_train=0.541  C_test=0.534  P_test=0.268
+  PFI LUAD->LUSC S2_genes48   特征 48 选中 2  C_train=0.574  C_test=0.518  P_test=0.982
+  PFI LUSC->LUAD S0_prior16   特征  3 选中 2  C_train=0.557  C_test=0.522  P_test=0.967
+  PFI LUSC->LUAD S1_msigdb6   特征  6 选中 6  C_train=0.516  C_test=0.533  P_test=0.204
+  PFI LUSC->LUAD S2_genes48   特征 48 选中 2  C_train=0.589  C_test=0.532  P_test=0.865
+
+[06] 完成 -> results/geneset_sensitivity.tsv
+    endpoint  train   test     scheme n_feature n_sel n_train n_test c_train
+      <char> <char> <char>     <char>     <int> <int>   <int>  <int>   <num>
+ 1:       OS   LUAD   LUSC S0_prior16         3     1     500    491  0.5545
+ 2:       OS   LUAD   LUSC S1_msigdb6         6     5     500    491  0.5834
+ 3:       OS   LUAD   LUSC S2_genes48        48    19     500    491  0.6814
+ 4:       OS   LUSC   LUAD S0_prior16         3     3     491    500  0.5751
+ 5:       OS   LUSC   LUAD S1_msigdb6         6     6     491    500  0.5311
+ 6:       OS   LUSC   LUAD S2_genes48        48     2     491    500  0.5861
+ 7:      PFI   LUAD   LUSC S0_prior16         3     1     500    491  0.5508
+ 8:      PFI   LUAD   LUSC S1_msigdb6         6     3     500    491  0.5408
+ 9:      PFI   LUAD   LUSC S2_genes48        48     2     500    491  0.5740
+10:      PFI   LUSC   LUAD S0_prior16         3     2     491    500  0.5569
+11:      PFI   LUSC   LUAD S1_msigdb6         6     6     491    500  0.5161
+12:      PFI   LUSC   LUAD S2_genes48        48     2     491    500  0.5887
+    c_test p_test     s_used
+     <num>  <num>     <char>
+ 1: 0.5006  0.751 lambda.min
+ 2: 0.5183  0.677  0.0001619
+ 3: 0.4824  0.472 lambda.min
+ 4: 0.5300  0.974 lambda.min
+ 5: 0.5141  0.799  0.0002024
+ 6: 0.5410  0.335 lambda.min
+ 7: 0.5383  0.765 lambda.min
+ 8: 0.5338  0.268 lambda.min
+ 9: 0.5178  0.982 lambda.min
+10: 0.5220  0.967 lambda.min
+11: 0.5332  0.204  0.0001057
+12: 0.5322  0.865 lambda.min
+---- 步骤 06 完成，用时 10.9 秒 ----
+
+========== 步骤 07 ==========
+[00_setup] 配置完成。基因集规模: nutrition_liver=16, neutrophil=16, lymphocyte=16
+[07] 免疫特征 13 条；基因数范围 12–566
+[07] 检查点基因命中 9/9；效应分子命中 10/10
+
+[07] 按「是否与免疫特征共享基因」分层的相关强度：
+              axis                          kind     n rho_median rho_max
+            <char>                        <char> <int>      <num>   <num>
+1:      lymphocyte     homologous (shared genes)     7      0.847   0.897
+2:      lymphocyte independent (no shared genes)     6      0.644   0.844
+3:      neutrophil     homologous (shared genes)     5      0.491   0.613
+4:      neutrophil independent (no shared genes)     8      0.487   0.594
+5: nutrition_liver independent (no shared genes)    13      0.204   0.362
+
+[07] 三轴与免疫特征相关（|rho| 前 8）：
+         axis                           immune_feature   rho     p   fdr
+       <char>                                   <char> <num> <num> <num>
+1: lymphocyte             HALLMARK_ALLOGRAFT_REJECTION 0.897     0     0
+2: lymphocyte   GOBP_REGULATORY_T_CELL_DIFFERENTIATION 0.870     0     0
+3: lymphocyte                   GOBP_T_CELL_ACTIVATION 0.860     0     0
+4: lymphocyte                   GOBP_B_CELL_ACTIVATION 0.847     0     0
+5: lymphocyte      GOBP_NATURAL_KILLER_CELL_ACTIVATION 0.844     0     0
+6: lymphocyte       HALLMARK_INTERFERON_GAMMA_RESPONSE 0.822     0     0
+7: lymphocyte   GOBP_MYELOID_DENDRITIC_CELL_ACTIVATION 0.795     0     0
+8: lymphocyte GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION 0.718     0     0
+
+[07] 高低组免疫特征差异（P 前 8）：
+                             immune_feature   diff        p      fdr
+                                     <char>  <num>    <num>    <num>
+1:             HALLMARK_ALLOGRAFT_REJECTION -0.114 9.3e-135 1.2e-133
+2:   GOBP_REGULATORY_T_CELL_DIFFERENTIATION -0.100 3.4e-127 2.2e-126
+3:                   GOBP_T_CELL_ACTIVATION -0.066 1.3e-122 5.6e-122
+4:                   GOBP_B_CELL_ACTIVATION -0.064 9.7e-118 3.2e-117
+5:      GOBP_NATURAL_KILLER_CELL_ACTIVATION -0.085 1.6e-117 4.1e-117
+6:       HALLMARK_INTERFERON_GAMMA_RESPONSE -0.087 8.2e-111 1.8e-110
+7:   GOBP_MYELOID_DENDRITIC_CELL_ACTIVATION -0.108 3.1e-101 5.8e-101
+8: GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION -0.071  5.3e-88  8.7e-88
+[07] 完成 -> results/immune_axis_correlation.tsv 等 3 表 + fig5
+---- 步骤 07 完成，用时 49.3 秒 ----
+
+========== 步骤 08 ==========
+[00_setup] 配置完成。基因集规模: nutrition_liver=16, neutrophil=16, lymphocyte=16
+[08] LUAD 可用样本 500（事件 182）
+[08] 单次分割：训练 350（事件 134）/ 测试 150（事件 48）
+[08] 单次分割结果：
+              scheme n_train n_test                   selected           coef
+              <char>   <int>  <int>                     <char>         <char>
+1: LUAD internal 7:3     350    150 nutrition_liver+lymphocyte 0.1535+-0.1852
+   c_train c_test p_test
+     <num>  <num>  <num>
+1:   0.587  0.494  0.888
+[08] 重复 100 次分割：训练 C 中位 0.557 / 测试 C 中位 0.542 [0.456, 0.600]；平均过拟合差 0.015
+[08] 完成 -> results/internal_*.tsv + figures/_intermediate/fig6_internal_km.png
+---- 步骤 08 完成，用时 10.8 秒 ----
+
+========== 步骤 09 ==========
+[00_setup] 配置完成。基因集规模: nutrition_liver=16, neutrophil=16, lymphocyte=16
+[09] 分析样本：LUAD 500（事件 182）/ LUSC 491（事件 211）
+
+[09] 表格已写出 -> results/tables/
+character(0)
+
+[09] Table 1 预览：
+Key: <Characteristic>
+                               Characteristic                  LUAD
+                                       <char>                <char>
+ 1:                         Age, median (IQR)          66 (59\342\200\22372)
+ 2:                             Deaths, n (%)            182 (36.4)
+ 3: Follow-up of censored, median (IQR), days      670 (469\342\200\2231129)
+ 4:                               Male, n (%)            230 (46.0)
+ 5:               OS time, median (IQR), days      656 (423\342\200\2231127)
+ 6:                               Patients, n                   500
+ 7:               Stage early (I\342\200\223II), n (%)            388 (77.6)
+ 8:              Stage late (III\342\200\223IV), n (%)            104 (20.8)
+ 9:           Stage other/unclassified, n (%)               8 (1.6)
+10:                      Stage unknown, n (%)               0 (0.0)
+11:            lymphocyte score, median (IQR) 0.684 (0.622\342\200\2230.745)
+12:            neutrophil score, median (IQR) 0.426 (0.368\342\200\2230.474)
+13:       nutrition_liver score, median (IQR) 0.370 (0.318\342\200\2230.429)
+                     LUSC
+                   <char>
+ 1:          68 (62\342\200\22373)
+ 2:            211 (43.0)
+ 3:      749 (395\342\200\2231367)
+ 4:            364 (74.1)
+ 5:      660 (323\342\200\2231264)
+ 6:                   491
+ 7:            397 (80.9)
+ 8:             90 (18.3)
+ 9:               4 (0.8)
+10:               0 (0.0)
+11: 0.671 (0.606\342\200\2230.733)
+12: 0.430 (0.368\342\200\2230.479)
+13: 0.279 (0.214\342\200\2230.355)
+
+[09] Table 4 预览：
+                                                    Analysis
+                                                      <char>
+1:                         Single 7:3 split \342\200\224 training set
+2:                    Single 7:3 split \342\200\224 held-out test set
+3: Repeated 100 splits \342\200\224 test set, median [2.5th\342\200\22397.5th]
+4:                       Mean optimism (training \342\210\222 test C)
+                        Value
+                       <char>
+1:                      0.587
+2: 0.494 (log-rank P = 0.888)
+3:      0.542 [0.456\342\200\2230.600]
+4:                      0.015
+                                                                                                                          Note
+                                                                                                                        <char>
+1:                                                                                  Features selected within training set only
+2: No axis reached P<0.10; fallback rule used (smallest-P axis carried forward, univariate coefficient applied, no LASSO step)
+3:                                                                                  Same procedure re-run on 100 random splits
+4:                                                              Shows the degree of over-optimism in internally fitted C-index
+---- 步骤 09 完成，用时 3.9 秒 ----
+Warning message:
+`geom_errorbarh()` was deprecated in ggplot2 4.0.0.
+i Please use the `orientation` argument of `geom_errorbar()` instead. 

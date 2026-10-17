@@ -1,0 +1,42 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+
+========== 步骤 10 ==========
+[00_setup] 配置完成。基因集规模: nutrition_liver=16, neutrophil=16, lymphocyte=16
+[10] Figure 2 完成
+[10] Figure 3 完成
+`height` was translated to `width`.
+`height` was translated to `width`.
+`height` was translated to `width`.
+`height` was translated to `width`.
+[10] Figure 4 完成（bootstrap CI 已写入 results/figure_data/）
+[10] Figure 5 完成
+
+[10] 全部图已生成：
+[1] "fig2_axis_immune_heatmap.pdf"     "fig2_axis_immune_heatmap.png"    
+[3] "fig3_nutrition_group_boxplot.pdf" "fig3_nutrition_group_boxplot.png"
+[5] "fig4_nutrition_effect_forest.pdf" "fig4_nutrition_effect_forest.png"
+[7] "fig5_internal_validation.pdf"     "fig5_internal_validation.png"    
+---- 步骤 10 完成，用时 18.8 秒 ----
+
+========== 步骤 11 ==========
+[00_setup] 配置完成。基因集规模: nutrition_liver=16, neutrophil=16, lymphocyte=16
+[S4a] 3 轴 × 16 基因 = 48 行；未检出 0 个
+[S4b] 13 条免疫特征；规模 12–566；与任意轴共享基因者 8 条
+[S4c] 检查点 9 + 效应 10 = 19 行；全部检出 = TRUE
+[S4d] 6 条通路；交集后规模 14–732
+
+[11] Table S4（a–d）已写入 D:/WorkBuddy_Y02/out_ali_directions/pathA/results/tables
+---- 步骤 11 完成，用时 3.4 秒 ----
+Warning messages:
+1: `geom_errorbarh()` was deprecated in ggplot2 4.0.0.
+i Please use the `orientation` argument of `geom_errorbar()` instead. 
+2: Removed 3 rows containing non-finite outside the scale range (`stat_bin()`). 
+3: Removed 2 rows containing missing values or values outside the scale range
+(`geom_bar()`). 
+4: Removed 3 rows containing non-finite outside the scale range (`stat_bin()`). 
+5: Removed 2 rows containing missing values or values outside the scale range
+(`geom_bar()`). 

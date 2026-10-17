@@ -11,23 +11,25 @@ During startup - Warning messages:
 分层分割的期望测试事件数 = 54.6；实测 = 48
 → 结论： 与分层不一致，实际为简单随机分割（未分层） 
 
-单次分割：训练集内单变量 P = nutrition_liver=0.4895, neutrophil=0.8964, lymphocyte=0.1318
-  通过 P<0.10 的轴数 = 0（无）；是否走最小 P 兜底 = TRUE
-  入模特征 = lymphocyte；系数 = -0.1323
+单次分割：训练集内单变量 P = nutrition_liver=0.0527, neutrophil=0.4795, lymphocyte=0.0193
+  通过 P<0.10 的轴数 = 2（nutrition_liver+lymphocyte）；是否走最小 P 兜底 = FALSE
+  入模特征 = nutrition_liver+lymphocyte；系数 = 0.1535+-0.1852
 
 ===== F2 100 次重复中入模的特征 =====
-          selected     N
-            <char> <int>
-1:      lymphocyte    44
-2: nutrition_liver    42
-3:      neutrophil    14
+                     selected     N
+                       <char> <int>
+1:                 lymphocyte    82
+2:            nutrition_liver     8
+3: nutrition_liver+lymphocyte     6
+4:                 neutrophil     2
+5:      neutrophil+lymphocyte     2
 
-入模特征名不同的次数 = 3 
+入模特征名不同的次数 = 5 
 通过初筛的轴数分布：
 
- 0  1 
-89 11 
-无轴通过初筛、走最小 P 兜底的次数 = 89 / 100
+ 0  1  2 
+33 59  8 
+无轴通过初筛、走最小 P 兜底的次数 = 33 / 100
 
 ===== 复现一致性 =====
 max|c_train 差| = 5.55e-16 ; max|c_test 差| = 5.55e-16 ; n_sel 完全相同 = TRUE

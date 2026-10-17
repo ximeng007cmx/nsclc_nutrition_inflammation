@@ -99,7 +99,8 @@ for (a in axes) t3[[paste0(a, " P")]] <- fmt_p(pc[[a]])
 setorder(t3, panel, gene)
 fwrite(t3, file.path(TDIR, "Table3_axis_checkpoint_correlation.csv"))
 
-# ---------------- Table 4 内部验证 ----------------
+# ---------------- Table 5 内部验证 ----------------
+# 2026-10-17 编号互换：内部验证在正文 §4 才首次引用，按「首次引用顺序」排为 Table 5
 i1 <- fread(file.path(PATHA$results, "internal_split_summary.tsv"))
 rr <- fread(file.path(PATHA$results, "internal_repeated_cv.tsv"))
 t4 <- data.table(
@@ -112,12 +113,13 @@ t4 <- data.table(
                     f3(quantile(rr$c_test, .025)), f3(quantile(rr$c_test, .975))),
             f3(mean(rr$c_train - rr$c_test))),
   Note = c("Features selected within training set only",
-           "Selected by univariate Cox (P<0.10) then LASSO-Cox",
+           "Two axes passed P<0.10 screening (lymphocyte P = 0.019, nutrition P = 0.053); both retained after LASSO shrinkage",
            "Same procedure re-run on 100 random splits",
            "Shows the degree of over-optimism in internally fitted C-index"))
-fwrite(t4, file.path(TDIR, "Table4_internal_validation.csv"))
+fwrite(t4, file.path(TDIR, "Table5_internal_validation.csv"))
 
-# ---------------- Table 5 按「营养轴」分组的免疫特征差异（无循环论证） ----------------
+# ---------------- Table 4 按「营养轴」分组的免疫特征差异（无循环论证） ----------------
+# 2026-10-17 编号互换：本节在正文 §3 首次引用，按「首次引用顺序」排为 Table 4
 # 说明：不用综合风险分分组（其含 lymphocyte 轴负系数 → 差异必然为负，属同义反复），
 #       改用 nutrition_liver 轴自身的中位数分组；该轴与全部免疫特征零基因重叠。
 imm <- readRDS(file.path(PATHA$work, "pa_scores_immune.rds"))
@@ -142,10 +144,10 @@ t5out <- t5[, .(immune_feature,
                 `Median (nutrition-low)` = f3(`Median (nutrition-low)`),
                 Difference = f3(Difference),
                 P = fmt_p(P), FDR = fmt_p(FDR))]
-fwrite(t5out, file.path(TDIR, "Table5_immune_diff_by_nutrition_axis.csv"))
+fwrite(t5out, file.path(TDIR, "Table4_immune_diff_by_nutrition_axis.csv"))
 
 # ---------------- Table S3 按综合风险分分组（附循环论证说明） ----------------
-r3 <- fread(file.path(PATHA$results, "immune_group_diff.tsv"))
+r3 <- fread(file.path(PATHA$results, "composite_group_diff.tsv"))
 setorder(r3, -diff)
 ts3 <- r3[, .(immune_feature,
               `Median (high score)` = f3(median_high),

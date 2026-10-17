@@ -1,0 +1,5 @@
+Analysis,Value,Note
+Single 7:3 split — training set,0.587,Features selected within training set only
+Single 7:3 split — held-out test set,0.494 (log-rank P = 0.888),"Two axes passed P<0.10 screening (lymphocyte P = 0.019, nutrition P = 0.053); both retained after LASSO shrinkage"
+"Repeated 100 splits — test set, median [2.5th–97.5th]",0.542 [0.456–0.600],Same procedure re-run on 100 random splits
+Mean optimism (training − test C),0.015,Shows the degree of over-optimism in internally fitted C-index

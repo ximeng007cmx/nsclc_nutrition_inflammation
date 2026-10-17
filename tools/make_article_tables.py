@@ -29,8 +29,8 @@ TABLES = [
      "Spearman correlations with single-gene expression (log2(FPKM+1)). "
      "Checkpoint panel: PDCD1, CD274, PDCD1LG2, CTLA4, LAG3, HAVCR2, TIGIT, IDO1, SIGLEC15. "
      "Effector panel: IFNG, GZMA, GZMB, PRF1, CXCL9, CXCL10, CXCL11, HLA-DRA, STAT1, CCR5."),
-    ("Table4_internal_validation.csv",
-     "Table 4. Internal validation of the prognostic score (negative result)",
+    ("Table5_internal_validation.csv",
+     "Table 5. Internal validation of the prognostic score (negative result)",
      "LUAD split 7:3 at RANDOM (sample.int(); NOT stratified by event status — "
      "observed event rates 38.3% training vs 32.0% held-out, against 36.4% expected "
      "under stratification); feature selection (univariate Cox P<0.10) "
@@ -38,8 +38,8 @@ TABLES = [
      "The held-out C-index is at chance level, indicating the three a-priori axes carry "
      "no prognostic discrimination in LUAD; the previously reported C-index of 0.541 "
      "was an over-optimistic value from fitting on the full dataset."),
-    ("Table5_immune_diff_by_nutrition_axis.csv",
-     "Table 5. Immune features by nutrition-axis group (independent of definitional overlap)",
+    ("Table4_immune_diff_by_nutrition_axis.csv",
+     "Table 4. Immune features by nutrition-axis group (independent of definitional overlap)",
      "Samples dichotomised at the median of the nutrition_liver axis, which shares "
      "NO genes with any immune feature. Higher nutrition-axis expression is associated "
      "with higher activity of myeloid/monocyte/macrophage and inflammatory pathways. "
@@ -59,7 +59,7 @@ TABLES = [
      "Table S3. Immune features by composite risk score (definitional consistency check)",
      "CAUTION: the composite score contains the lymphocyte axis with a negative coefficient, "
      "so lower immune activity in the high-score group is partly definitional. "
-     "This table is provided for completeness only; Table 5 is the non-circular analysis."),
+     "This table is provided for completeness only; Table 4 is the non-circular analysis."),
     ("TableS4a_axis_genes.csv",
      "Table S4a. Gene composition of the three a-priori nutrition–inflammation axes",
      "16 genes per axis, entered as a-priori definition (not data-driven selection). "
@@ -152,17 +152,17 @@ for fn, title, cap in TABLES:
 md += ["---", "",
        "## 表格使用说明", "",
        "- 主表：Table 1（基线）、Table 2（轴 × 免疫特征）、Table 3（轴 × 检查点/效应基因）、"
-       "Table 4（内部验证，阴性）、Table 5（营养轴分组差异，独立）。",
+       "Table 4（营养轴分组差异，独立）、Table 5（内部验证，阴性）。",
        "- 附表：S1 终点敏感性、S2 特征方案敏感性、S3 综合分分组（含循环论证警示）。",
-       "- **重点叙事**：Table 5 是本方案唯一不含循环论证的关联结果——营养轴与全部免疫特征零基因重叠，"
-       "却与髓系/炎症通路活性系统性正相关；Table 4 如实报告预后模型无判别力。"]
+       "- **重点叙事**：Table 4 是本方案唯一不含循环论证的关联结果——营养轴与全部免疫特征零基因重叠，"
+       "却与髓系/炎症通路活性系统性正相关；Table 5 如实报告预后模型无判别力。"]
 
 ht += ["<hr><h2>表格使用说明</h2><ul>",
        "<li>主表：Table 1（基线）、Table 2（轴 × 免疫特征）、Table 3（轴 × 检查点/效应基因）、"
-       "Table 4（内部验证，阴性）、Table 5（营养轴分组差异，独立）。</li>",
+       "Table 4（营养轴分组差异，独立）、Table 5（内部验证，阴性）。</li>",
        "<li>附表：S1 终点敏感性、S2 特征方案敏感性、S3 综合分分组（含循环论证警示）。</li>",
-       "<li><b>重点叙事</b>：Table 5 是本方案唯一不含循环论证的关联结果；"
-       "Table 4 如实报告预后模型无判别力。</li></ul></body></html>"]
+       "<li><b>重点叙事</b>：Table 4 是本方案唯一不含循环论证的关联结果；"
+       "Table 5 如实报告预后模型无判别力。</li></ul></body></html>"]
 
 open(os.path.join(TDIR, "PathA_文章级表格.md"), "w", encoding="utf-8").write("\n".join(md))
 open(os.path.join(TDIR, "PathA_文章级表格.html"), "w", encoding="utf-8").write("\n".join(ht))

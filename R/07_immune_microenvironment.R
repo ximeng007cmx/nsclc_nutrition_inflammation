@@ -8,7 +8,8 @@
 # 输出：
 #   results/immune_axis_correlation.tsv  三轴 × 免疫特征 Spearman
 #   results/checkpoint_correlation.tsv   三轴 × 免疫检查点基因
-#   results/immune_group_diff.tsv        高/低营养-炎症组免疫特征差异
+#   results/composite_group_diff.tsv     综合风险分分组（high vs low）免疫特征差异 → ESM 4 / Table S3
+#                                         （原名 immune_group_diff.tsv，2026-10-17 改名以免与营养轴分组混淆）
 #   figures/_intermediate/fig5_immune_heatmap.png
 #   （【2026-10-16 A6-0.6】该热图为过程图：其信息已由稿件 Figure 2 覆盖，
 #     不进投稿包；输出移至 figures/_intermediate/，原图内中文标题一并去除）
@@ -131,7 +132,7 @@ r3 <- rbindlist(lapply(imm_names, function(b) {
 }))
 r3[, fdr := p.adjust(p, "BH")]
 setorder(r3, -diff)
-fwrite(r3, file.path(PATHA$results, "immune_group_diff.tsv"), sep = "\t")
+fwrite(r3, file.path(PATHA$results, "composite_group_diff.tsv"), sep = "\t")
 
 message("\n[07] 三轴与免疫特征相关（|rho| 前 8）：")
 print(head(r1[order(-abs(rho)), .(axis, immune_feature, rho = round(rho, 3),

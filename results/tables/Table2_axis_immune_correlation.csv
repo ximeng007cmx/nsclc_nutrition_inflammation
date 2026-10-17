@@ -1,40 +1,40 @@
 Nutrition–inflammation axis,Immune feature (MSigDB),Set size,Overlapping genes,Spearman rho,P,FDR,Type
-lymphocyte,HALLMARK_ALLOGRAFT_REJECTION,195,11,0.922,<1e-300,<1e-300,Overlapping genes
-lymphocyte,GOBP_T_CELL_ACTIVATION,566,10,0.905,<1e-300,<1e-300,Overlapping genes
-lymphocyte,GOBP_REGULATORY_T_CELL_DIFFERENTIATION,40,1,0.896,<1e-300,<1e-300,Overlapping genes
-lymphocyte,GOBP_NATURAL_KILLER_CELL_ACTIVATION,97,0,0.865,<1e-300,<1e-300,No overlapping genes
+lymphocyte,HALLMARK_ALLOGRAFT_REJECTION,195,11,0.897,<1e-300,<1e-300,Overlapping genes
+lymphocyte,GOBP_REGULATORY_T_CELL_DIFFERENTIATION,40,1,0.870,<1e-300,<1e-300,Overlapping genes
+lymphocyte,GOBP_T_CELL_ACTIVATION,566,10,0.860,<1e-300,<1e-300,Overlapping genes
 lymphocyte,GOBP_B_CELL_ACTIVATION,269,2,0.847,<1e-300,<1e-300,Overlapping genes
-lymphocyte,GOBP_MYELOID_DENDRITIC_CELL_ACTIVATION,29,0,0.840,<1e-300,<1e-300,No overlapping genes
-lymphocyte,HALLMARK_INTERFERON_GAMMA_RESPONSE,196,2,0.831,<1e-300,<1e-300,Overlapping genes
-lymphocyte,GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION,113,2,0.812,<1e-300,<1e-300,Overlapping genes
-lymphocyte,HALLMARK_INFLAMMATORY_RESPONSE,199,5,0.704,<1e-300,<1e-300,Overlapping genes
-lymphocyte,GOBP_MAST_CELL_ACTIVATION,70,0,0.649,<1e-300,<1e-300,No overlapping genes
-lymphocyte,GOBP_MACROPHAGE_ACTIVATION,109,0,0.646,<1e-300,<1e-300,No overlapping genes
-lymphocyte,GOBP_NEUTROPHIL_DEGRANULATION,14,0,0.590,<1e-300,<1e-300,No overlapping genes
-lymphocyte,GOBP_MONOCYTE_ACTIVATION,12,0,0.421,<1e-300,<1e-300,No overlapping genes
-neutrophil,HALLMARK_INFLAMMATORY_RESPONSE,199,1,0.629,<1e-300,<1e-300,Overlapping genes
-neutrophil,GOBP_MAST_CELL_ACTIVATION,70,1,0.624,<1e-300,<1e-300,Overlapping genes
-neutrophil,GOBP_NEUTROPHIL_DEGRANULATION,14,0,0.611,<1e-300,<1e-300,No overlapping genes
-neutrophil,GOBP_T_CELL_ACTIVATION,566,1,0.598,<1e-300,<1e-300,Overlapping genes
-neutrophil,GOBP_B_CELL_ACTIVATION,269,0,0.572,<1e-300,<1e-300,No overlapping genes
-neutrophil,GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION,113,0,0.566,<1e-300,<1e-300,No overlapping genes
-neutrophil,HALLMARK_ALLOGRAFT_REJECTION,195,2,0.560,<1e-300,<1e-300,Overlapping genes
-neutrophil,GOBP_MYELOID_DENDRITIC_CELL_ACTIVATION,29,0,0.524,<1e-300,<1e-300,No overlapping genes
-neutrophil,GOBP_NATURAL_KILLER_CELL_ACTIVATION,97,0,0.520,<1e-300,<1e-300,No overlapping genes
-neutrophil,GOBP_MACROPHAGE_ACTIVATION,109,0,0.516,<1e-300,<1e-300,No overlapping genes
-neutrophil,HALLMARK_INTERFERON_GAMMA_RESPONSE,196,1,0.497,<1e-300,<1e-300,Overlapping genes
-neutrophil,GOBP_REGULATORY_T_CELL_DIFFERENTIATION,40,0,0.456,<1e-300,<1e-300,No overlapping genes
-neutrophil,GOBP_MONOCYTE_ACTIVATION,12,0,0.335,<1e-300,<1e-300,No overlapping genes
-nutrition_liver,GOBP_MACROPHAGE_ACTIVATION,109,0,0.276,5.3e-19,7.6e-19,No overlapping genes
-nutrition_liver,GOBP_MONOCYTE_ACTIVATION,12,0,0.255,2.6e-16,3.6e-16,No overlapping genes
-nutrition_liver,HALLMARK_INFLAMMATORY_RESPONSE,199,0,0.250,8.1e-16,1.1e-15,No overlapping genes
-nutrition_liver,GOBP_MAST_CELL_ACTIVATION,70,0,0.226,4.6e-13,5.9e-13,No overlapping genes
-nutrition_liver,GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION,113,0,0.197,3.2e-10,4.0e-10,No overlapping genes
-nutrition_liver,HALLMARK_ALLOGRAFT_REJECTION,195,0,0.176,1.7e-08,2.1e-08,No overlapping genes
-nutrition_liver,GOBP_T_CELL_ACTIVATION,566,0,0.165,1.4e-07,1.7e-07,No overlapping genes
-nutrition_liver,GOBP_MYELOID_DENDRITIC_CELL_ACTIVATION,29,0,0.152,1.2e-06,1.4e-06,No overlapping genes
-nutrition_liver,HALLMARK_INTERFERON_GAMMA_RESPONSE,196,0,0.144,4.6e-06,5.2e-06,No overlapping genes
-nutrition_liver,GOBP_B_CELL_ACTIVATION,269,0,0.114,2.7e-04,3.0e-04,No overlapping genes
-nutrition_liver,GOBP_NATURAL_KILLER_CELL_ACTIVATION,97,0,0.108,5.9e-04,6.2e-04,No overlapping genes
-nutrition_liver,GOBP_REGULATORY_T_CELL_DIFFERENTIATION,40,0,0.100,0.002,0.002,No overlapping genes
-nutrition_liver,GOBP_NEUTROPHIL_DEGRANULATION,14,0,0.099,0.002,0.002,No overlapping genes
+lymphocyte,GOBP_NATURAL_KILLER_CELL_ACTIVATION,97,0,0.844,<1e-300,<1e-300,No overlapping genes
+lymphocyte,HALLMARK_INTERFERON_GAMMA_RESPONSE,196,2,0.822,<1e-300,<1e-300,Overlapping genes
+lymphocyte,GOBP_MYELOID_DENDRITIC_CELL_ACTIVATION,29,0,0.795,<1e-300,<1e-300,No overlapping genes
+lymphocyte,GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION,113,2,0.718,<1e-300,<1e-300,Overlapping genes
+lymphocyte,HALLMARK_INFLAMMATORY_RESPONSE,199,5,0.687,<1e-300,<1e-300,Overlapping genes
+lymphocyte,GOBP_MACROPHAGE_ACTIVATION,109,0,0.659,<1e-300,<1e-300,No overlapping genes
+lymphocyte,GOBP_MAST_CELL_ACTIVATION,70,0,0.629,<1e-300,<1e-300,No overlapping genes
+lymphocyte,GOBP_NEUTROPHIL_DEGRANULATION,14,0,0.518,<1e-300,<1e-300,No overlapping genes
+lymphocyte,GOBP_MONOCYTE_ACTIVATION,12,0,0.486,<1e-300,<1e-300,No overlapping genes
+neutrophil,HALLMARK_INFLAMMATORY_RESPONSE,199,1,0.613,<1e-300,<1e-300,Overlapping genes
+neutrophil,GOBP_MACROPHAGE_ACTIVATION,109,0,0.594,<1e-300,<1e-300,No overlapping genes
+neutrophil,GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION,113,0,0.571,<1e-300,<1e-300,No overlapping genes
+neutrophil,GOBP_MAST_CELL_ACTIVATION,70,1,0.540,<1e-300,<1e-300,Overlapping genes
+neutrophil,GOBP_MONOCYTE_ACTIVATION,12,0,0.518,<1e-300,<1e-300,No overlapping genes
+neutrophil,GOBP_NEUTROPHIL_DEGRANULATION,14,0,0.505,<1e-300,<1e-300,No overlapping genes
+neutrophil,GOBP_T_CELL_ACTIVATION,566,1,0.491,<1e-300,<1e-300,Overlapping genes
+neutrophil,GOBP_MYELOID_DENDRITIC_CELL_ACTIVATION,29,0,0.469,<1e-300,<1e-300,No overlapping genes
+neutrophil,HALLMARK_ALLOGRAFT_REJECTION,195,2,0.449,<1e-300,<1e-300,Overlapping genes
+neutrophil,GOBP_B_CELL_ACTIVATION,269,0,0.427,<1e-300,<1e-300,No overlapping genes
+neutrophil,GOBP_NATURAL_KILLER_CELL_ACTIVATION,97,0,0.406,<1e-300,<1e-300,No overlapping genes
+neutrophil,HALLMARK_INTERFERON_GAMMA_RESPONSE,196,1,0.367,<1e-300,<1e-300,Overlapping genes
+neutrophil,GOBP_REGULATORY_T_CELL_DIFFERENTIATION,40,0,0.286,2.0e-20,2.7e-20,No overlapping genes
+nutrition_liver,GOBP_MAST_CELL_ACTIVATION,70,0,0.362,<1e-300,<1e-300,No overlapping genes
+nutrition_liver,GOBP_MONOCYTE_ACTIVATION,12,0,0.312,<1e-300,<1e-300,No overlapping genes
+nutrition_liver,GOBP_MACROPHAGE_ACTIVATION,109,0,0.311,<1e-300,<1e-300,No overlapping genes
+nutrition_liver,GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION,113,0,0.242,7.2e-15,9.4e-15,No overlapping genes
+nutrition_liver,GOBP_NEUTROPHIL_DEGRANULATION,14,0,0.221,1.5e-12,1.8e-12,No overlapping genes
+nutrition_liver,HALLMARK_INFLAMMATORY_RESPONSE,199,0,0.209,2.0e-11,2.4e-11,No overlapping genes
+nutrition_liver,GOBP_MYELOID_DENDRITIC_CELL_ACTIVATION,29,0,0.204,6.7e-11,7.9e-11,No overlapping genes
+nutrition_liver,GOBP_T_CELL_ACTIVATION,566,0,0.199,1.8e-10,2.1e-10,No overlapping genes
+nutrition_liver,HALLMARK_ALLOGRAFT_REJECTION,195,0,0.197,2.8e-10,3.2e-10,No overlapping genes
+nutrition_liver,GOBP_B_CELL_ACTIVATION,269,0,0.171,4.5e-08,4.9e-08,No overlapping genes
+nutrition_liver,HALLMARK_INTERFERON_GAMMA_RESPONSE,196,0,0.147,2.7e-06,2.9e-06,No overlapping genes
+nutrition_liver,GOBP_REGULATORY_T_CELL_DIFFERENTIATION,40,0,0.144,4.4e-06,4.5e-06,No overlapping genes
+nutrition_liver,GOBP_NATURAL_KILLER_CELL_ACTIVATION,97,0,0.069,0.028,0.028,No overlapping genes

@@ -104,18 +104,18 @@ padding:8px 12px;margin-bottom:.3rem}blockquote{color:#555;font-size:.9rem}
 <tr><td>TIGIT</td><td>Immune checkpoint</td><td>0.057</td><td>0.406</td><td>0.899</td><td>0.071</td><td>2.6e-41</td><td>&lt;1e-300</td></tr>
 </tbody></table>
 
-<h2>Table 4. Internal validation of the prognostic score (negative result)</h2>
+<h2>Table 5. Internal validation of the prognostic score (negative result)</h2>
 <div class='cap'>LUAD split 7:3 at RANDOM (sample.int(); NOT stratified by event status — observed event rates 38.3% training vs 32.0% held-out, against 36.4% expected under stratification); feature selection (univariate Cox P&lt;0.10) and standardisation performed within the training set only. The held-out C-index is at chance level, indicating the three a-priori axes carry no prognostic discrimination in LUAD; the previously reported C-index of 0.541 was an over-optimistic value from fitting on the full dataset.</div>
 <table>
 <thead><tr><th>Analysis</th><th>Value</th><th>Note</th></tr></thead>
 <tbody>
 <tr><td>Single 7:3 split — training set</td><td>0.536</td><td>Features selected within training set only</td></tr>
-<tr><td>Single 7:3 split — held-out test set</td><td>0.488 (log-rank P = 0.822)</td><td>Selected by univariate Cox (P&lt;0.10) then LASSO-Cox</td></tr>
+<tr><td>Single 7:3 split — held-out test set</td><td>0.488 (log-rank P = 0.822)</td><td>No axis reached P&lt;0.10; fallback rule used (smallest-P axis carried forward, univariate coefficient applied, no LASSO step)</td></tr>
 <tr><td>Repeated 100 splits — test set, median [2.5th–97.5th]</td><td>0.501 [0.438–0.560]</td><td>Same procedure re-run on 100 random splits</td></tr>
 <tr><td>Mean optimism (training − test C)</td><td>0.031</td><td>Shows the degree of over-optimism in internally fitted C-index</td></tr>
 </tbody></table>
 
-<h2>Table 5. Immune features by nutrition-axis group (independent of definitional overlap)</h2>
+<h2>Table 4. Immune features by nutrition-axis group (independent of definitional overlap)</h2>
 <div class='cap'>Samples dichotomised at the median of the nutrition_liver axis, which shares NO genes with any immune feature. Higher nutrition-axis expression is associated with higher activity of myeloid/monocyte/macrophage and inflammatory pathways. Wilcoxon rank-sum test; FDR = Benjamini–Hochberg.</div>
 <table>
 <thead><tr><th>immune_feature</th><th>Median (nutrition-high)</th><th>Median (nutrition-low)</th><th>Difference</th><th>P</th><th>FDR</th></tr></thead>
@@ -168,7 +168,7 @@ padding:8px 12px;margin-bottom:.3rem}blockquote{color:#555;font-size:.9rem}
 </tbody></table>
 
 <h2>Table S3. Immune features by composite risk score (definitional consistency check)</h2>
-<div class='cap'>CAUTION: the composite score contains the lymphocyte axis with a negative coefficient, so lower immune activity in the high-score group is partly definitional. This table is provided for completeness only; Table 5 is the non-circular analysis.</div>
+<div class='cap'>CAUTION: the composite score contains the lymphocyte axis with a negative coefficient, so lower immune activity in the high-score group is partly definitional. This table is provided for completeness only; Table 4 is the non-circular analysis.</div>
 <table>
 <thead><tr><th>immune_feature</th><th>Median (high score)</th><th>Median (low score)</th><th>Difference</th><th>P</th><th>FDR</th></tr></thead>
 <tbody>
@@ -302,6 +302,6 @@ padding:8px 12px;margin-bottom:.3rem}blockquote{color:#555;font-size:.9rem}
 </tbody></table>
 
 <hr><h2>表格使用说明</h2><ul>
-<li>主表：Table 1（基线）、Table 2（轴 × 免疫特征）、Table 3（轴 × 检查点/效应基因）、Table 4（内部验证，阴性）、Table 5（营养轴分组差异，独立）。</li>
+<li>主表：Table 1（基线）、Table 2（轴 × 免疫特征）、Table 3（轴 × 检查点/效应基因）、Table 4（营养轴分组差异，独立）、Table 5（内部验证，阴性）。</li>
 <li>附表：S1 终点敏感性、S2 特征方案敏感性、S3 综合分分组（含循环论证警示）。</li>
-<li><b>重点叙事</b>：Table 5 是本方案唯一不含循环论证的关联结果；Table 4 如实报告预后模型无判别力。</li></ul></body></html>
+<li><b>重点叙事</b>：Table 4 是本方案唯一不含循环论证的关联结果；Table 5 如实报告预后模型无判别力。</li></ul></body></html>
