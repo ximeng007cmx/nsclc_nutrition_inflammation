@@ -210,7 +210,7 @@ release of this repository.
 |---|---|
 | GitHub repository | https://github.com/ximeng007cmx/nsclc_nutrition_inflammation |
 | Concept DOI (always resolves to the newest archived version) | https://doi.org/10.5281/zenodo.23427752 |
-| Version DOI **v1.1.1** | https://doi.org/10.5281/zenodo.PLACEHOLDER_V111 |
+| Version DOI **v1.1.1** | https://doi.org/10.5281/zenodo.23446018 |
 | Version DOI **v1.1.0** | https://doi.org/10.5281/zenodo.23443637 |
 | Version DOI **v1.0.0** | https://doi.org/10.5281/zenodo.23427753 |
 
