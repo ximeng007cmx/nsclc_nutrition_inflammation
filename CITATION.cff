@@ -2,10 +2,10 @@ cff-version: 1.2.0
 message: "If you use this code, please cite both the software and the associated manuscript."
 title: "Analysis code for: Nutrition–inflammation gene-expression axes associate with myeloid inflammatory activity but do not predict survival in non-small cell lung cancer: a TCGA transcriptomic analysis"
 type: software
-version: 1.1.0
+version: 1.1.1
 date-released: 2026-10-18
 license: MIT
-doi: "10.5281/zenodo.23427752"          # concept DOI (all versions); the v1.0.0 version DOI is 10.5281/zenodo.23427753
+doi: "10.5281/zenodo.23427752"          # concept DOI (all versions); version DOIs: v1.1.0 10.5281/zenodo.23443637, v1.0.0 10.5281/zenodo.23427753
 url: "https://github.com/ximeng007cmx/nsclc_nutrition_inflammation"
 repository-code: "https://github.com/ximeng007cmx/nsclc_nutrition_inflammation"
 abstract: >-
@@ -19,11 +19,16 @@ abstract: >-
   sensitivity analyses (endpoint, feature scheme, training direction), two
   robustness modules (random expression-matched null panels and Spearman
   partial correlations controlling for the ESTIMATE tumour-purity estimate),
-  and analysis of the tumour immune microenvironment using pathway-level
-  activity proxies from real MSigDB C5 GO:BP and HALLMARK entries. The axes
-  associate with myeloid inflammatory activity but do not predict survival
-  (internal hold-out C-index 0.494; median repeated-split C-index 0.542); the
-  prognostic result is reported as an honest negative. All scripts are shipped
+  analysis of the tumour immune microenvironment using pathway-level activity
+  proxies from real MSigDB C5 GO:BP and HALLMARK entries, a pre-specified
+  incremental Cox family (clinical base plus tumour purity and ImmuneScore),
+  a marker-based cross-check with MCP-counter 1.2.0, and external validation
+  of the frozen model in two independent lung adenocarcinoma cohorts
+  (ArrayExpress E-GEOD-68465 and E-GEOD-31210). The axes associate with
+  myeloid inflammatory activity but do not predict survival (internal
+  hold-out C-index 0.494; median repeated-split C-index 0.542; external
+  C-indices 0.473 and 0.593, both intervals spanning chance); the prognostic
+  result is reported as an honest negative. All scripts are shipped
   unmodified except for one hard-coded project root, which relocate.py rewrites
   on the user's machine.
 keywords:

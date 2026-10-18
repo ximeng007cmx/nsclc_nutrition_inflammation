@@ -9,6 +9,9 @@ venv/
 data/
 raw/
 ref/
+# ... except the provenance manifest of the external validation cohorts (shipped, see DATA_SOURCES.md §9)
+!data/external/
+!data/external/download_manifest.tsv
 
 # Generated at runtime
 work/

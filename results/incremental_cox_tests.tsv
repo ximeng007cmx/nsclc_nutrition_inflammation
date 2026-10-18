@@ -1,0 +1,9 @@
+comparison	question	lr_chisq	df	p	p_fmt
+M0 -> M1 (+risk_score)	risk_score adds to clinical covariates alone?	3.49315664913411	1	0.06162297631737	6.16e-02
+M0 -> M1b (+lymphocyte axis)	lymphocyte axis adds to clinical covariates alone?	3.49315664913411	1	0.06162297631737	6.16e-02
+M1 -> M2 (+purity)	purity adds to clinical + risk_score?	0.309650447586137	1	0.577894763894797	5.78e-01
+M1 -> M3 (+ImmuneScore)	ImmuneScore adds to clinical + risk_score?	0.599657853967528	1	0.438708600072827	4.39e-01
+M1 -> M4 (+purity +ImmuneScore)	both add to clinical + risk_score?	0.640323972944088	2	0.726031420279419	7.26e-01
+M0 -> M5 (+purity +ImmuneScore)	content adds to clinical covariates alone?	4.02186191834494	2	0.133863994728087	1.34e-01
+M5 -> M4 (+risk_score)	risk_score adds beyond purity + ImmuneScore?	0.111618703733257	1	0.738308737172107	7.38e-01
+M5 -> M4b (+lymphocyte axis)	lymphocyte axis adds beyond purity + ImmuneScore?	0.111618703733711	1	0.738308737171593	7.38e-01

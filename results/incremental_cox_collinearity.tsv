@@ -1,0 +1,5 @@
+pair	spearman_rho	n
+risk_score_vs_ImmuneScore	-0.825815857351127	481
+lymphocyte_vs_ImmuneScore	0.825815857351127	481
+risk_score_vs_purity	0.714840048047262	481
+ImmuneScore_vs_purity	-0.925933350659473	481

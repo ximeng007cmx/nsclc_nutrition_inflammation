@@ -1,0 +1,39 @@
+== 16_external_validation.R ==
+
+GSE68465: 12545 基因 × 442 样本（236 事件）
+
+GSE31210: 16504 基因 × 226 样本（35 事件）
+
+-- 轴基因覆盖 --
+     cohort            axis n_axis_genes n_present pct_present
+     <char>          <char>        <int>     <int>       <num>
+1: GSE68465 nutrition_liver           16        11        68.8
+2: GSE68465      neutrophil           16        10        62.5
+3: GSE68465      lymphocyte           16         9        56.2
+4: GSE31210 nutrition_liver           16        11        68.8
+5: GSE31210      neutrophil           16        10        62.5
+6: GSE31210      lymphocyte           16        10        62.5
+
+-- 外部验证 --
+     cohort                              analysis     n events cindex    lo
+     <char>                                <char> <int>  <int>  <num> <num>
+1: GSE68465 composite (TCGA coefficients, frozen)   442    236  0.473 0.431
+2: GSE68465          single axis: nutrition_liver   442    236     NA    NA
+3: GSE68465               single axis: neutrophil   442    236     NA    NA
+4: GSE68465               single axis: lymphocyte   442    236     NA    NA
+5: GSE31210 composite (TCGA coefficients, frozen)   226     35  0.593 0.487
+6: GSE31210          single axis: nutrition_liver   226     35     NA    NA
+7: GSE31210               single axis: neutrophil   226     35     NA    NA
+8: GSE31210               single axis: lymphocyte   226     35     NA    NA
+      hi logrank_p    HR       p
+   <num>     <num> <num>   <num>
+1: 0.517     0.294    NA      NA
+2:    NA        NA 0.896 0.08880
+3:    NA        NA 1.129 0.06060
+4:    NA        NA 1.035 0.59400
+5: 0.698     0.356    NA      NA
+6:    NA        NA 1.051 0.77100
+7:    NA        NA 1.516 0.00312
+8:    NA        NA 0.715 0.04890
+
+[16] 完成。

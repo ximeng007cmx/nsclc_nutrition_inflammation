@@ -1,0 +1,77 @@
+== 15_immune_tool_crosscheck.R ==
+表达矩阵: 58581 基因 × 1011 样本；轴 3 条；ssGSEA 免疫特征 13 条
+MCP-counter 群体 10 个 × 样本 1011
+ [1] "T cells"                 "CD8 T cells"            
+ [3] "Cytotoxic lymphocytes"   "B lineage"              
+ [5] "NK cells"                "Monocytic lineage"      
+ [7] "Myeloid dendritic cells" "Neutrophils"            
+ [9] "Endothelial cells"       "Fibroblasts"            
+
+-- 轴 × MCP-counter（合并 1,011 例）--
+               axis              population    rho      fdr rho_adj_purity
+             <char>                  <char>  <num>    <num>          <num>
+ 1: nutrition_liver                 T cells  0.123  1.4e-04         -0.047
+ 2: nutrition_liver             CD8 T cells  0.023  4.7e-01         -0.090
+ 3: nutrition_liver   Cytotoxic lymphocytes -0.077  1.8e-02         -0.202
+ 4: nutrition_liver               B lineage  0.216  1.4e-11          0.118
+ 5: nutrition_liver                NK cells  0.094  4.1e-03         -0.023
+ 6: nutrition_liver       Monocytic lineage  0.193  1.3e-09          0.040
+ 7: nutrition_liver Myeloid dendritic cells  0.193  1.3e-09          0.089
+ 8: nutrition_liver             Neutrophils  0.474  0.0e+00          0.446
+ 9: nutrition_liver       Endothelial cells  0.473  0.0e+00          0.445
+10: nutrition_liver             Fibroblasts -0.052  1.1e-01         -0.214
+11:      neutrophil                 T cells  0.234  8.5e-14         -0.223
+12:      neutrophil             CD8 T cells  0.138  1.2e-05         -0.126
+13:      neutrophil   Cytotoxic lymphocytes  0.085  7.0e-03         -0.184
+14:      neutrophil               B lineage  0.251  1.3e-15         -0.059
+15:      neutrophil                NK cells  0.148  2.8e-06         -0.152
+16:      neutrophil       Monocytic lineage  0.414  0.0e+00          0.027
+17:      neutrophil Myeloid dendritic cells  0.444  0.0e+00          0.215
+18:      neutrophil             Neutrophils  0.437  0.0e+00          0.364
+19:      neutrophil       Endothelial cells  0.365  0.0e+00          0.134
+20:      neutrophil             Fibroblasts  0.311  0.0e+00          0.041
+21:      lymphocyte                 T cells  0.886  0.0e+00          0.731
+22:      lymphocyte             CD8 T cells  0.772 1.6e-200          0.708
+23:      lymphocyte   Cytotoxic lymphocytes  0.752  0.0e+00          0.688
+24:      lymphocyte               B lineage  0.678  0.0e+00          0.414
+25:      lymphocyte                NK cells  0.724  0.0e+00          0.568
+26:      lymphocyte       Monocytic lineage  0.706  0.0e+00          0.179
+27:      lymphocyte Myeloid dendritic cells  0.454  0.0e+00         -0.034
+28:      lymphocyte             Neutrophils  0.064  4.1e-02         -0.228
+29:      lymphocyte       Endothelial cells  0.228  2.7e-13         -0.363
+30:      lymphocyte             Fibroblasts  0.303  3.7e-23         -0.275
+               axis              population    rho      fdr rho_adj_purity
+             <char>                  <char>  <num>    <num>          <num>
+
+-- 汇总 --
+              axis n_populations n_positive n_sig_positive n_sig_negative
+            <char>         <int>      <int>          <int>          <int>
+1: nutrition_liver            10          8              7              1
+2:      neutrophil            10         10             10              0
+3:      lymphocyte            10         10             10              0
+   rho_median myeloid_rho_median myeloid_n_positive myeloid_n_sig_positive
+        <num>              <num>              <int>                  <int>
+1:  0.1583772          0.1932833                  3                      3
+2:  0.2807749          0.4365610                  3                      3
+3:  0.6921529          0.4540571                  3                      3
+   myeloid_rho_adj_median myeloid_n_sig_adj
+                    <num>             <int>
+1:             0.08900942                 2
+2:             0.21482198                 2
+3:            -0.03449974                 1
+
+-- 工具互证（MCP 群体 × ssGSEA 特征，中位 rho）--
+                 population median_rho n_positive     n
+                     <char>      <num>      <int> <int>
+ 1:       Monocytic lineage      0.786         13    13
+ 2:                 T cells      0.733         13    13
+ 3: Myeloid dendritic cells      0.604         13    13
+ 4:               B lineage      0.548         13    13
+ 5:                NK cells      0.521         13    13
+ 6:             CD8 T cells      0.503         13    13
+ 7:   Cytotoxic lymphocytes      0.486         13    13
+ 8:       Endothelial cells      0.457         13    13
+ 9:             Fibroblasts      0.405         13    13
+10:             Neutrophils      0.245         13    13
+
+[15] 完成。

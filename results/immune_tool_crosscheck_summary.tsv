@@ -1,0 +1,4 @@
+axis	n_populations	n_positive	n_sig_positive	n_sig_negative	rho_median	myeloid_rho_median	myeloid_n_positive	myeloid_n_sig_positive	myeloid_rho_adj_median	myeloid_n_sig_adj
+nutrition_liver	10	8	7	1	0.158377154319741	0.193283338139	3	3	0.0890094219469897	2
+neutrophil	10	10	10	0	0.280774937898899	0.436560957089129	3	3	0.214821983824984	2
+lymphocyte	10	10	10	0	0.692152924491262	0.454057088072373	3	3	-0.0344997420097271	1

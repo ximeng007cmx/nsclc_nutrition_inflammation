@@ -1,6 +1,6 @@
 # Analysis code — Nutrition–inflammation gene-expression axes associate with myeloid inflammatory activity but do not predict survival in non-small cell lung cancer
 
-Version **v1.1.0** ｜ Date **2026-10-18**
+Version **v1.1.1** ｜ Date **2026-10-18**
 
 Analysis code accompanying the manuscript:
 
@@ -9,7 +9,8 @@ Analysis code accompanying the manuscript:
 This repository contains the **complete analysis pipeline** (data assembly → ssGSEA axis scoring → LASSO-Cox
 modelling → internal and cross-histology validation → endpoint, feature-scheme and training-direction
 sensitivity analyses → random-panel null calibration and ESTIMATE purity adjustment →
-immune-microenvironment analysis → article-level tables and figures), together with
+immune-microenvironment analysis → incremental Cox models, marker-based cross-check and
+external validation → article-level tables and figures), together with
 the **derived result tables** on which every reported number is based.
 
 ---
@@ -53,23 +54,27 @@ the **derived result tables** on which every reported number is based.
 ├── verify_checksums.py             checks the tree against CHECKSUMS.sha256
 ├── requirements.txt                R and Python environment
 ├── relocate.py                     rewrite the hard-coded project root (see §5)
-├── run_all_pathA.R                 master entry point (steps 01–13, 99)
+├── run_all_pathA.R                 master entry point (steps 01–16, 99)
 ├── LICENSE                         MIT
 ├── CITATION.cff                    citation metadata (Citation File Format 1.2.0)
 ├── .zenodo.json                    Zenodo deposition metadata for the archived release
 ├── R/                              the analysis steps
 │   ├── 00_setup_pathA.R            configuration: paths, parameters, the three a-priori signatures
 │   ├── pathA_core.R                shared function library (Toil handling, ssGSEA, LASSO-Cox, evaluation)
-│   ├── 01_load.R … 13_figures_random_estimate.R   steps 01–13 (12–13 need the ESTIMATE scores, §4)
+│   ├── 01_load.R … 16_external_validation.R   steps 01–16 (12–13 need the ESTIMATE scores, §4;
+│   │                                              16 needs the external cohorts, §4 and DATA_SOURCES §9)
 │   └── 99_selftest.R               synthetic end-to-end self-test (no TCGA data needed)
 ├── tools/                          downstream tools (Python + a few R audit scripts)
 ├── results/                        derived result tables cited in the manuscript
 │   ├── tables/                     article-level Tables 1–5 and S1–S4
 │   ├── figure_data/                the exact numbers behind Figure 4
-│   └── refs_gapfill/               Europe PMC literature gap-fill records (manuscript auxiliary)
+│   ├── refs_gapfill/               Europe PMC literature gap-fill records (manuscript auxiliary)
+│   └── external_*.tsv, immune_tool_*.tsv, incremental_cox_*.tsv   steps 14–16 outputs, at the top level
 ├── figures/                        Figures 1–7 (PNG + PDF)
 │   └── supplementary/              Supplementary Figures S1–S4 (PNG + PDF)
 ├── logs/                           run logs + logs/sessionInfo.txt (full resolved R session)
+├── data/external/
+│   └── download_manifest.tsv       provenance manifest of the external validation cohorts (§4, step 16)
 └── assets/
     └── _gencode_probemap.gz        GENCODE gene-id → symbol annotation map (redistributed)
 ```
@@ -119,6 +124,8 @@ python relocate.py .
 #      data/genesets/c5.go.bp.symbols.gmt
 #      data/external/estimate/ESTIMATE_scores.txt          (only needed for steps 12–13;
 #      data/external/estimate/lung_*_RNAseqV2.txt           see DATA_SOURCES.md §6)
+#      data/external/gse68465/{expr_symbol.tsv.gz,clinical.tsv}   (only needed for step 16;
+#      data/external/gse31210/{expr_symbol.tsv.gz,clinical.tsv}    see DATA_SOURCES.md §9)
 #      assets/_gencode_probemap.gz            (already shipped here)
 
 # 2) subset the pan-cancer matrix to LUAD/LUSC
@@ -129,6 +136,8 @@ python tools/subset_toil.py data/tcga_RSEM_gene_fpkm.gz data/tcga_sample_barcode
 #    which run only if data/external/estimate/ESTIMATE_scores.txt is present)
 Rscript run_all_pathA.R 01 02 03 04 05 06 07 08 09 10 11
 Rscript run_all_pathA.R 12 13   # robustness modules (~20 min for step 12)
+Rscript run_all_pathA.R 14 15   # incremental Cox models + MCP-counter cross-check (seconds)
+Rscript run_all_pathA.R 16      # external validation (needs the cohorts above)
 
 # 4) Figure 1 + the combined article-table document
 python tools/make_fig1_workflow.py
@@ -201,12 +210,14 @@ release of this repository.
 |---|---|
 | GitHub repository | https://github.com/ximeng007cmx/nsclc_nutrition_inflammation |
 | Concept DOI (always resolves to the newest archived version) | https://doi.org/10.5281/zenodo.23427752 |
+| Version DOI **v1.1.1** | https://doi.org/10.5281/zenodo.PLACEHOLDER_V111 |
 | Version DOI **v1.1.0** | https://doi.org/10.5281/zenodo.23443637 |
 | Version DOI **v1.0.0** | https://doi.org/10.5281/zenodo.23427753 |
 
-Cite the **version DOI of the release you actually used**. The manuscript cites **v1.1.0**, the version that
-reproduces every reported number (including the random-panel null calibration and the ESTIMATE purity
-adjustment).
+Cite the **version DOI of the release you actually used**. The manuscript cites **v1.1.1**, the version that
+reproduces every reported number, including the random-panel null calibration and the ESTIMATE purity
+adjustment (v1.1.0), the incremental Cox models and the MCP-counter cross-check (v1.1.1), and the external
+validation in two independent lung adenocarcinoma cohorts (v1.1.1).
 
 ---
 

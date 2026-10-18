@@ -1,0 +1,64 @@
+== 14_incremental_cox.R ==
+分析集: n = 481, events = 177, median OS = 651 d
+
+-- 共线性 --
+                        pair spearman_rho
+                      <char>        <num>
+1: risk_score_vs_ImmuneScore      -0.8258
+2: lymphocyte_vs_ImmuneScore       0.8258
+3:      risk_score_vs_purity       0.7148
+4:     ImmuneScore_vs_purity      -0.9259
+
+-- risk_score / lymphocyte HR 随校正变化 --
+                                     model       term     HR    lo      hi
+                                    <char>     <char>  <num> <num>   <num>
+1:                M1 clinical + risk_score risk_score 15.494 0.871 275.710
+2:                          M2 M1 + purity risk_score  7.182 0.136 378.326
+3:                     M3 M1 + ImmuneScore risk_score  2.972 0.018 493.123
+4:            M4 M1 + purity + ImmuneScore risk_score  2.508 0.012 543.603
+5: M1b clinical + lymphocyte axis (per SD)    lymph_z  0.863 0.740   1.007
+6:          M4b M1b + purity + ImmuneScore    lymph_z  0.952 0.714   1.270
+        p
+    <num>
+1: 0.0621
+2: 0.3300
+3: 0.6760
+4: 0.7380
+5: 0.0621
+6: 0.7380
+
+-- C-index --
+                                      model     n events cindex    lo    hi
+                                     <char> <int>  <num>  <num> <num> <num>
+1:                         M0 clinical only   481    177  0.618 0.565 0.671
+2:                 M1 clinical + risk_score   481    177  0.628 0.576 0.680
+3:                           M2 M1 + purity   481    177  0.633 0.583 0.687
+4:                      M3 M1 + ImmuneScore   481    177  0.638 0.589 0.691
+5:             M4 M1 + purity + ImmuneScore   481    177  0.639 0.590 0.691
+6: M5 clinical + purity + ImmuneScore (ref)   481    177  0.642 0.596 0.694
+7:  M1b clinical + lymphocyte axis (per SD)   481    177  0.628 0.576 0.680
+8:           M4b M1b + purity + ImmuneScore   481    177  0.639 0.590 0.691
+   delta_c
+     <num>
+1:  -0.024
+2:  -0.014
+3:  -0.009
+4:  -0.004
+5:  -0.003
+6:   0.000
+7:  -0.014
+8:  -0.003
+
+-- LRT --
+                        comparison lr_chisq    df      p
+                            <char>    <num> <int>  <num>
+1:          M0 -> M1 (+risk_score)     3.49     1 0.0616
+2:    M0 -> M1b (+lymphocyte axis)     3.49     1 0.0616
+3:              M1 -> M2 (+purity)     0.31     1 0.5780
+4:         M1 -> M3 (+ImmuneScore)     0.60     1 0.4390
+5: M1 -> M4 (+purity +ImmuneScore)     0.64     2 0.7260
+6: M0 -> M5 (+purity +ImmuneScore)     4.02     2 0.1340
+7:          M5 -> M4 (+risk_score)     0.11     1 0.7380
+8:    M5 -> M4b (+lymphocyte axis)     0.11     1 0.7380
+
+[14] 完成。
