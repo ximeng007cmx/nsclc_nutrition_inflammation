@@ -1,6 +1,6 @@
 # Analysis code — Nutrition–inflammation gene-expression axes associate with myeloid inflammatory activity but do not predict survival in non-small cell lung cancer
 
-Version **v1.1.1** ｜ Date **2026-10-18**
+Version **v1.1.2** ｜ Date **2026-10-19**
 
 Analysis code accompanying the manuscript:
 
@@ -210,14 +210,23 @@ release of this repository.
 |---|---|
 | GitHub repository | https://github.com/ximeng007cmx/nsclc_nutrition_inflammation |
 | Concept DOI (always resolves to the newest archived version) | https://doi.org/10.5281/zenodo.23427752 |
+| Version DOI **v1.1.2** | (assigned on release; see Zenodo) |
 | Version DOI **v1.1.1** | https://doi.org/10.5281/zenodo.23446018 |
 | Version DOI **v1.1.0** | https://doi.org/10.5281/zenodo.23443637 |
 | Version DOI **v1.0.0** | https://doi.org/10.5281/zenodo.23427753 |
 
-Cite the **version DOI of the release you actually used**. The manuscript cites **v1.1.1**, the version that
+Cite the **version DOI of the release you actually used**. The manuscript cites **v1.1.2**, the version that
 reproduces every reported number, including the random-panel null calibration and the ESTIMATE purity
 adjustment (v1.1.0), the incremental Cox models and the MCP-counter cross-check (v1.1.1), and the external
 validation in two independent lung adenocarcinoma cohorts (v1.1.1).
+
+**What changed in v1.1.2.** No result table, model coefficient or reported statistic changed; every file under
+`results/` from v1.1.1 is byte-identical here. The release corrects the workflow figure, whose two summary
+values were still those of the pre-fix expression matrix (C-index 0.488 and median 0.501); `figures/fig1_workflow.pdf`
+and its PNG now carry the values reported in the manuscript (0.494 and 0.542). Two audit tools are added:
+`tools/independent_recompute.py`, which re-derives 57 reported quantities from the result tables and exits
+non-zero on any mismatch, and `tools/make_table6_credibility.py`, which rebuilds Table 6 of the manuscript from
+the nine upstream result files with hard-coded expectation checks on every formatted value.
 
 ---
 

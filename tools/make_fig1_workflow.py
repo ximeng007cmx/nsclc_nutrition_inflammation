@@ -16,7 +16,7 @@ tools/make_fig1_workflow.py — Figure 1：研究设计与分析流程图
   991 / 500 / 491    -> results/tables/Table1_baseline.csv
   3 x 16 基因        -> R/00_setup_pathA.R GENES
   13 免疫特征 / 19 转录本 -> results/immune_axis_correlation.tsv、checkpoint_correlation.tsv
-  C-index 0.488 / 0.501 -> results/internal_split_summary.tsv、internal_repeated_cv.tsv
+  C-index 0.494 / 0.542 -> results/internal_split_summary.tsv、internal_repeated_cv.tsv（2026-10-18 重跑后值）
 """
 import matplotlib
 matplotlib.use("Agg")
@@ -149,7 +149,7 @@ box(COL[1][0], 14, COL[1][1], 42,
 box(COL[2][0], 14, COL[2][1], 42,
     "Prognostic result",
     "endpoint sensitivity\nand feature schemes\n"
-    "no prognostic\ndiscrimination\n(C-index 0.488;\nmedian 0.501)",
+    "no prognostic\ndiscrimination\n(C-index 0.494;\nmedian 0.542)",
     C_RES, E_RES)
 
 arrow(64, 35, 67, 35, color=E_MOD)
